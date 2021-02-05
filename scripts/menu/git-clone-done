@@ -1,0 +1,5 @@
+#!/bin/bash
+
+yes | cp -rf /opt/echbay_kdata/version /opt/echbay_kdata/script/kdata/kdata.newversion
+rm -rf /root/git-clone*
+rm -rf /root/install*
