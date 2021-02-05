@@ -4,8 +4,8 @@ echo "Install git..."
 sudo yum -y install git > /dev/null 2>&1
 
 # update code
-if [ -d /opt/echbay_kdata ]; then
-cd ~ ; cd /opt/echbay_kdata && git pull origin master ; cd ~
+if [ -d /opt/vps_kdata ]; then
+cd ~ ; cd /opt/vps_kdata && git pull origin master ; cd ~
 #git pull origin master
 #git pull origin
 fi
@@ -14,6 +14,5 @@ cd ~
 
 sleep 5
 
-find /opt/echbay_kdata/script/kdata/menu -type f -exec chmod 755 {} \;
-/opt/echbay_kdata/script/kdata/menu/git-clone-done
-
+find /opt/vps_kdata/script/kdata/menu -type f -exec chmod 755 {} \;
+/opt/vps_kdata/script/kdata/menu/git-clone-done
