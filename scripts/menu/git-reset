@@ -4,9 +4,9 @@ echo "-------------------------------------------------------------------------"
 echo "Ok ! please wait check reset code from git..."
 
 cd ~
-if [ -d /opt/echbay_kdata ]; then
-rm -rf /opt/echbay_kdata/*
-rm -rf /opt/echbay_kdata
+if [ -d /opt/vps_kdata ]; then
+rm -rf /opt/vps_kdata/*
+rm -rf /opt/vps_kdata
 sleep 5
 fi
 
