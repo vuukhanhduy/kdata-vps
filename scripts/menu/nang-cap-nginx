@@ -3,7 +3,7 @@
 
 # them lenh kiem tra neu co git roi thi thoi khong tai lai nua
 okResetGit="y"
-if [ -d /opt/echbay_kdata ]; then
+if [ -d /opt/vps_kdata ]; then
 echo "========================================================================="
 echo "========================================================================="
 echo "========================================================================="
@@ -30,11 +30,11 @@ fi
 cd ~
 cd /tmp
 rm -rf 00-all-nginx-version.txt
-yes | cp -rf /opt/echbay_kdata/script/kdata/00-all-nginx-version.txt 00-all-nginx-version.txt
+yes | cp -rf /opt/vps_kdata/script/kdata/00-all-nginx-version.txt 00-all-nginx-version.txt
 
 nginx -V
 
-. /opt/echbay_kdata/script/kdata/nginx-setup.conf
+. /opt/vps_kdata/script/kdata/nginx-setup.conf
 echo "========================================================================="
 echo "NEW nginx version: "${Nginx_VERSION}
 echo "========================================================================="
@@ -57,11 +57,11 @@ fi
 
 echo "OS Version: "$(rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release))
 if [ "$(rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release))" == "6" ]; then
-/opt/echbay_kdata/script/kdata/menu/nginx-setup6
+/opt/vps_kdata/script/kdata/menu/nginx-setup6
 elif [ "$(rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release))" == "7" ]; then
-/opt/echbay_kdata/script/kdata/menu/nginx-setup7
+/opt/vps_kdata/script/kdata/menu/nginx-setup7
 else
-/opt/echbay_kdata/script/kdata/menu/nginx-setup8
+/opt/vps_kdata/script/kdata/menu/nginx-setup8
 fi
 
 cd ~
@@ -80,8 +80,8 @@ else
 service nginx restart
 fi
 
-#rm -rf /opt/echbay_kdata/*
-#rm -rf /opt/echbay_kdata
+#rm -rf /opt/vps_kdata/*
+#rm -rf /opt/vps_kdata
 sleep 1
 
 clear

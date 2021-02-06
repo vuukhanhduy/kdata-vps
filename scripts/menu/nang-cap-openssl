@@ -17,7 +17,7 @@ sleep 1
 
 # them lenh kiem tra neu co git roi thi thoi khong tai lai nua
 okResetGit="y"
-if [ -d /opt/echbay_kdata ]; then
+if [ -d /opt/vps_kdata ]; then
 echo "========================================================================="
 echo "========================================================================="
 echo "========================================================================="
@@ -40,7 +40,7 @@ chmod +x /root/git-clone
 bash /root/git-clone
 fi
 
-. /opt/echbay_kdata/script/kdata/nginx-setup.conf
+. /opt/vps_kdata/script/kdata/nginx-setup.conf
 echo "========================================================================="
 echo "NEW openssl version: "${opensslversion}
 echo "========================================================================="
@@ -59,7 +59,7 @@ sleep 1
 cd /usr/local/kdata
 
 #wget --no-check-certificate -q https://www.openssl.org/source/${opensslversion}.tar.gz
-yes | cp -rf /opt/echbay_kdata/script/kdata/module-nginx/${opensslversion}.tar.gz ${opensslversion}.tar.gz
+yes | cp -rf /opt/vps_kdata/script/kdata/module-nginx/${opensslversion}.tar.gz ${opensslversion}.tar.gz
 tar -xzf ${opensslversion}.tar.gz
 rm -rf ${opensslversion}.tar.gz
 

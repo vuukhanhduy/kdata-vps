@@ -181,9 +181,9 @@ include /etc/nginx/conf/drop.conf;
 END
 
 if [ ! -d /etc/kdata/errorpage_html ]; then
-	if [ -d /opt/echbay_kdata/script/kdata/errorpage_html ]; then
+	if [ -d /opt/vps_kdata/script/kdata/errorpage_html ]; then
 		mkdir -p /etc/kdata/errorpage_html ; chmod 755 /etc/kdata/errorpage_html
-		yes | cp -rf /opt/echbay_kdata/script/kdata/errorpage_html/. /etc/kdata/errorpage_html/
+		yes | cp -rf /opt/vps_kdata/script/kdata/errorpage_html/. /etc/kdata/errorpage_html/
 	fi
 fi
 
