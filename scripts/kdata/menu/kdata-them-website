@@ -171,7 +171,7 @@ include /etc/nginx/conf/staticfiles.conf;
 		fastcgi_busy_buffers_size 256k;
 		fastcgi_temp_file_write_size 256k;
 		fastcgi_intercept_errors on;
-        	fastcgi_param SCRIPT_FILENAME /home/$website/public_html\$fastcgi_script_name;
+        	fastcgi_param SCRIPT_FILENAME /home/$website/public_html\$fastcgi_scripts_name;
     	}
 
 #include /etc/nginx/conf/phpstatus.conf;
@@ -181,9 +181,9 @@ include /etc/nginx/conf/drop.conf;
 END
 
 if [ ! -d /etc/kdata/errorpage_html ]; then
-	if [ -d /opt/vps_kdata/script/kdata/errorpage_html ]; then
+	if [ -d /opt/vps_kdata/scripts/kdata/errorpage_html ]; then
 		mkdir -p /etc/kdata/errorpage_html ; chmod 755 /etc/kdata/errorpage_html
-		yes | cp -rf /opt/vps_kdata/script/kdata/errorpage_html/. /etc/kdata/errorpage_html/
+		yes | cp -rf /opt/vps_kdata/scripts/kdata/errorpage_html/. /etc/kdata/errorpage_html/
 	fi
 fi
 
