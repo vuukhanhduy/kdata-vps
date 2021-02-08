@@ -26,13 +26,13 @@ cd ~
 
 sleep 5
 
-find /opt/vps_kdata/script/kdata/menu -type f -exec chmod 755 {} \;
-/opt/vps_kdata/script/kdata/menu/git-clone-done
+find /opt/vps_kdata/scripts/kdata/menu -type f -exec chmod 755 {} \;
+/opt/vps_kdata/scripts/kdata/menu/git-clone-done
 
 echo "update ECHBAY-VPSSIM menu"
 mkdir -p /etc/kdata/menu ; chmod 755 /etc/kdata/menu
 rm -rf /etc/kdata/menu/*
-yes | cp -rf /opt/vps_kdata/script/kdata/menu/. /etc/kdata/menu/
+yes | cp -rf /opt/vps_kdata/scripts/kdata/menu/. /etc/kdata/menu/
 
 echo "Chmod 755 Menu"
-/opt/vps_kdata/script/kdata/menu/chmod-755-menu
+/opt/vps_kdata/scripts/kdata/menu/chmod-755-menu
