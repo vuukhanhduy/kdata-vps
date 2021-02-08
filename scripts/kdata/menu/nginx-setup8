@@ -2,7 +2,7 @@
 
 # https://www.vultr.com/docs/how-to-install-nginx-from-source-on-centos-8
 
-. /opt/vps_kdata/script/kdata/nginx-setup.conf
+. /opt/vps_kdata/scripts/kdata/nginx-setup.conf
 echo $moduledir
 echo $opensslversion
 echo $withopensslopt
@@ -15,7 +15,7 @@ echo "Install after 3s"
 sleep 3
 
 
-/opt/vps_kdata/script/kdata/menu/nginx-setup-download
+/opt/vps_kdata/scripts/kdata/menu/nginx-setup-download
 
 
 cd

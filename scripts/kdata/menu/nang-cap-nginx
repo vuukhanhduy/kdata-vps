@@ -21,7 +21,7 @@ fi
 if [ "$okResetGit" = "y" ]; then
 # copy code tu file install sang
 cd ~
-wget --no-check-certificate -q https://raw.githubusercontent.com/itvn9online/kdata-free/master/script/kdata/menu/git-clone
+wget --no-check-certificate -q https://raw.githubusercontent.com/vuukhanhduy/kdata-vps/main/scripts/kdata/menu/git-clone
 chmod +x /root/git-clone
 bash /root/git-clone
 fi
@@ -30,11 +30,11 @@ fi
 cd ~
 cd /tmp
 rm -rf 00-all-nginx-version.txt
-yes | cp -rf /opt/vps_kdata/script/kdata/00-all-nginx-version.txt 00-all-nginx-version.txt
+yes | cp -rf /opt/vps_kdata/scripts/kdata/00-all-nginx-version.txt 00-all-nginx-version.txt
 
 nginx -V
 
-. /opt/vps_kdata/script/kdata/nginx-setup.conf
+. /opt/vps_kdata/scripts/kdata/nginx-setup.conf
 echo "========================================================================="
 echo "NEW nginx version: "${Nginx_VERSION}
 echo "========================================================================="
@@ -57,11 +57,11 @@ fi
 
 echo "OS Version: "$(rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release))
 if [ "$(rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release))" == "6" ]; then
-/opt/vps_kdata/script/kdata/menu/nginx-setup6
+/opt/vps_kdata/scripts/kdata/menu/nginx-setup6
 elif [ "$(rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release))" == "7" ]; then
-/opt/vps_kdata/script/kdata/menu/nginx-setup7
+/opt/vps_kdata/scripts/kdata/menu/nginx-setup7
 else
-/opt/vps_kdata/script/kdata/menu/nginx-setup8
+/opt/vps_kdata/scripts/kdata/menu/nginx-setup8
 fi
 
 cd ~
