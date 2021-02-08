@@ -3,7 +3,7 @@
 /etc/kdata/menu/kdata-befor-vps-info
 clear
 printf "=========================================================================\n"
-printf "               KDATA - Quan Ly VPS/Server by WebGiaRe.org \n"
+printf "               KDATA - Quan Ly VPS/Server by KDATA.VN \n"
 printf "=========================================================================\n"
 printf "                            Server Status \n"
 printf "=========================================================================\n"
