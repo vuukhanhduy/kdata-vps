@@ -64,7 +64,7 @@ if [ -f /etc/yum.repos.d/epel.repo ]; then
 sudo sed -i "s/mirrorlist=https/mirrorlist=http/" /etc/yum.repos.d/epel.repo
 fi
 
-yes | cp -rf /opt/kdata_vps/scripts/kdata/calc /bin/calc && chmod +x /bin/calc
+yes | cp -rf /opt/vps_kdata/scripts/kdata/calc /bin/calc && chmod +x /bin/calc
 clear  
 rm -rf /root/kdata*
 
@@ -104,18 +104,18 @@ if [ "$yourlanguage" = "english" ]; then
 echo "----------------------------------------------------------------------------"
 echo "Please wait ..."
 sleep 2
-cd /opt/kdata_vps/scripts/kdata/centos${current_os_version} ; chmod +x kdata-setup ; clear ; bash kdata-setup
-yes | cp -rf /opt/kdata_vps/scripts/kdata/centos${current_os_version}/kdata-setup ~/kdata-setup ; chmod +x kdata-setup ; clear ; bash kdata-setup
+cd /opt/vps_kdata/scripts/kdata/centos${current_os_version} ; chmod +x kdata-setup ; clear ; bash kdata-setup
+yes | cp -rf /opt/vps_kdata/scripts/kdata/centos${current_os_version}/kdata-setup ~/kdata-setup ; chmod +x kdata-setup ; clear ; bash kdata-setup
 elif [ "$yourlanguage" = "vietnamese" ]; then
 echo "----------------------------------------------------------------------------"
 echo "Please wait ..."
 sleep 2
 if [ "$current_os_version" == "6" ]; then
-yes | cp -rf /opt/kdata_vps/scripts/kdata/centos6/kdata-setup ~/kdata-setup ; chmod +x kdata-setup ; clear ; bash kdata-setup
+yes | cp -rf /opt/vps_kdata/scripts/kdata/centos6/kdata-setup ~/kdata-setup ; chmod +x kdata-setup ; clear ; bash kdata-setup
 elif [ "$current_os_version" == "7" ]; then
-yes | cp -rf /opt/kdata_vps/scripts/kdata/centos7/kdata-setup ~/kdata-setup ; chmod +x kdata-setup ; clear ; bash kdata-setup
+yes | cp -rf /opt/vps_kdata/scripts/kdata/centos7/kdata-setup ~/kdata-setup ; chmod +x kdata-setup ; clear ; bash kdata-setup
 else
-yes | cp -rf /opt/kdata_vps/scripts/kdata/centos8/kdata-setup ~/kdata-setup ; chmod +x kdata-setup ; clear ; bash kdata-setup
+yes | cp -rf /opt/vps_kdata/scripts/kdata/centos8/kdata-setup ~/kdata-setup ; chmod +x kdata-setup ; clear ; bash kdata-setup
 fi
 else 
 rm -rf /root/install* && rm -rf /root/kdata* && clear

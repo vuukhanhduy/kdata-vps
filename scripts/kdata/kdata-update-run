@@ -10,33 +10,33 @@ bash /root/git-clone
 
 # BEGIN update VPSKDATA main
 #rm -rf /etc/motd
-yes | cp -rf /opt/kdata_vps/scripts/kdata/motd /etc/motd
+yes | cp -rf /opt/vps_kdata/scripts/kdata/motd /etc/motd
 
-yes | cp -rf /opt/kdata_vps/scripts/kdata/calc /bin/calc && chmod +x /bin/calc
+yes | cp -rf /opt/vps_kdata/scripts/kdata/calc /bin/calc && chmod +x /bin/calc
 
-yes | cp -rf /opt/kdata_vps/scripts/kdata/kdata /bin/kdata && chmod +x /bin/kdata
+yes | cp -rf /opt/vps_kdata/scripts/kdata/kdata /bin/kdata && chmod +x /bin/kdata
 # BEGIN update VPSKDATA main
 
 
 rm -rf /home/kdata.demo/errorpage_html/*
-yes | cp -rf /opt/kdata_vps/scripts/kdata/errorpage_html/. /home/kdata.demo/errorpage_html/
+yes | cp -rf /opt/vps_kdata/scripts/kdata/errorpage_html/. /home/kdata.demo/errorpage_html/
 
 
 # BEGIN update VPSKDATA menu
 #rm -rf /etc/kdata/menu/*
-#yes | cp -rf /opt/kdata_vps/scripts/kdata/menu/. /etc/kdata/menu/
+#yes | cp -rf /opt/vps_kdata/scripts/kdata/menu/. /etc/kdata/menu/
 
 # Chmod 755 Menu
-#/opt/kdata_vps/scripts/kdata/menu/chmod-755-menu
+#/opt/vps_kdata/scripts/kdata/menu/chmod-755-menu
 # END update VPSKDATA menu
 
 
 # confirm done update
-yes | cp -rf /opt/kdata_vps/version /etc/kdata/kdata.version
+yes | cp -rf /opt/vps_kdata/version /etc/kdata/kdata.version
 
 
-#rm -rf /opt/kdata_vps/*
-#rm -rf /opt/kdata_vps
+#rm -rf /opt/vps_kdata/*
+#rm -rf /opt/vps_kdata
 sleep 1
 
 # enable auto update system
