@@ -14,5 +14,5 @@ cd ~
 
 sleep 5
 
-find /opt/vps_kdata/script/kdata/menu -type f -exec chmod 755 {} \;
-/opt/vps_kdata/script/kdata/menu/git-clone-done
+find /opt/vps_kdata/scripts/kdata/menu -type f -exec chmod 755 {} \;
+/opt/vps_kdata/scripts/kdata/menu/git-clone-done
