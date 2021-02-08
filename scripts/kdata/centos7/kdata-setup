@@ -457,7 +457,7 @@ service mysql start
 #systemctl start redis.service
 mkdir -p /home/kdata.demo/public_html
 cd /home/kdata.demo/public_html
-#wget http://hostingaz.vn/scripts/kdata/robots.txt
+
 #wget --no-check-certificate -q https://kdata.com/scripts/kdata/html/install/vietnam/index.html
 yes | cp -rf /opt/vps_kdata/scripts/kdata/html/install/vietnam/index.html index.html
 cd

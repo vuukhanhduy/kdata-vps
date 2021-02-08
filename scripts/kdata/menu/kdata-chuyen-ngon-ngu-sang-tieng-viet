@@ -1,6 +1,6 @@
 #!/bin/sh
 . /home/kdata.conf
-if [ "$(grep HostingAZ.VN /bin/kdata)" != "" ]; then
+if [ "$(grep KDATA.VN /bin/kdata)" != "" ]; then
 clear
 echo "========================================================================= "
 echo "You are using Vietnamese Version"

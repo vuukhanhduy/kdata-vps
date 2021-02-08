@@ -1155,7 +1155,7 @@ Luu Y:
 + De bao mat, moi khi co dang nhap SSH va Server, KDATA-VPS se gui email thong bao toi dia chi email $kdataemail .
   Thay email hoac tat chuc nang nay bang [ BAT/TAT Email Thong Bao Login ] trong [ Tien ich - Addons ].  
   
-KDATA by Nguyen Oanh - http://hostingaz.vn' | exim  $kdataemail
+KDATA -- YOUR SUCCESS IS OUR SUCCESS - http://kdata.vn' | exim  $kdataemail
 END
 chmod +x /tmp/finishedemail.sh
 /tmp/finishedemail.sh

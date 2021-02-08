@@ -3,7 +3,7 @@
 if [ -f /etc/php.d/opcache.ini ]; then
 clear
 echo "========================================================================="
-echo "               KDATA - Manage VPS/Server by HostingAZ.VN      "       
+echo "               KDATA - Manage VPS/Server by KDATA.VN      "       
 echo "========================================================================="
 echo "                        Cau hinh Zend OPcache"
 echo "========================================================================="
