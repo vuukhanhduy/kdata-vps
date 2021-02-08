@@ -104,7 +104,7 @@ include /etc/nginx/conf/ddos2.conf;
 #///////////////////////////////////////////////////////
 include /etc/nginx/conf/all.conf;  
 
-#Tang bao mat security, chong sql injection  ....(uncoment neu ban muon su dung). Boi vi mot so code website khong su dung duoc voi rule nay, nen mac dinh VPSSIM de tat.
+#Tang bao mat security, chong sql injection  ....(uncoment neu ban muon su dung). Boi vi mot so code website khong su dung duoc voi rule nay, nen mac dinh KDATA de tat.
 include /etc/nginx/conf/block.conf;
 
 #Deny scripts inside writable-directories

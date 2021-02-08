@@ -10,7 +10,7 @@ crontab -r
 (crontab -u root -l ; echo "*/5 * * * * auto-start-mysql") | crontab -u root -
 clear
 echo "========================================================================= "
-echo "VPSSIM hoan thanh xoa tat ca crontab. "
+echo "KDATA hoan thanh xoa tat ca crontab. "
 echo "-------------------------------------------------------------------------"
 echo "[Auto re-start MySQL Server] duoc kich hoat lai."
 /etc/kdata/menu/crontab/kdata-cronjob-menu

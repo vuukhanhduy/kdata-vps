@@ -28,7 +28,7 @@ fi
 	rm -f /home/$uploadsite/public_html/index.html
     cat > "/home/$uploadsite/public_html/index.html" <<END
 <!DOCTYPE html>
-<html id="VPSSIM" lang="en-US" dir="LTR" class="Public Cute Pig" xmlns:fb="http://www.facebook.com/2008/fbml">
+<html id="KDATA" lang="en-US" dir="LTR" class="Public Cute Pig" xmlns:fb="http://www.facebook.com/2008/fbml">
 <head>
 <meta charset="utf-8"/>
 <title>Cute Pig !!!</title>

@@ -42,7 +42,7 @@ fi
 fi
 clear
 echo "========================================================================="
-echo "VPSSIM can not find zend opcache in your system"
+echo "KDATA can not find zend opcache in your system"
 kdata
 }
 

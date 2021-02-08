@@ -1,6 +1,6 @@
 #!/bin/sh
 . /home/kdata.conf
-if [ "$(grep VPSSIM.COM /bin/kdata)" != "" ]; then
+if [ "$(grep KDATA.COM /bin/kdata)" != "" ]; then
 clear
 echo "========================================================================= "
 echo "You are using English Version"
@@ -8,11 +8,11 @@ echo "You are using English Version"
 exit
 fi
 echo "========================================================================= "
-echo "Use this function to change language for VPSSIM"
+echo "Use this function to change language for KDATA"
 echo "-------------------------------------------------------------------------"
-echo "VPSSIM support EngLish & Vietnamese"
+echo "KDATA support EngLish & Vietnamese"
 echo "========================================================================= "
-read -r -p "You want to change VPSSIM language to English ? [y/N] " response
+read -r -p "You want to change KDATA language to English ? [y/N] " response
 case $response in
     [yY][eE][sS]|[yY]) 
     echo "-------------------------------------------------------------------------"
@@ -57,7 +57,7 @@ wget -q --no-check-certificate https://github.com/itvn9online/kdata-free/raw/mas
 find /etc/kdata/menu -type f -exec chmod 755 {} \;
 clear 
 echo "========================================================================= "
-echo "Change Language of VPSSIM to English Finished"
+echo "Change Language of KDATA to English Finished"
 /etc/kdata/menu/kdata-thay-doi-ngon-ngu-menu
        ;;
     *)
@@ -67,5 +67,5 @@ esac
 clear
 clear
 echo "========================================================================="
-echo "Cancel Change Language for VPSSIM"
+echo "Cancel Change Language for KDATA"
 /etc/kdata/menu/kdata-thay-doi-ngon-ngu-menu

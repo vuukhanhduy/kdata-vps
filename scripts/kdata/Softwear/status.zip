@@ -17,7 +17,7 @@
 /* 您可能是下一个?
 /* ---------------------------------------------------- */
 
-///////////////// Password protect - Add by VPSSIM //////////////////////////////////
+///////////////// Password protect - Add by KDATA //////////////////////////////////
 include '/etc/kdata/defaulpassword.php';
 if (defined('ADMIN_USERNAME') && ADMIN_USERNAME != '') {
     if (!isset($_SERVER['PHP_AUTH_USER'])
@@ -31,15 +31,15 @@ if (defined('ADMIN_USERNAME') && ADMIN_USERNAME != '') {
 <html><body>
     <h1>Rejected!</h1>
     <big>Wrong Username or Password!</big><br>
-    <big>Get username and password in your manage email or in /home/VPSSIM-manage-info.txt !</big><br>
+    <big>Get username and password in your manage email or in /home/KDATA-manage-info.txt !</big><br>
     <big>Or Create new username and password:</big><br>
-    <big>VPSSIM menu ==> Default User & Password</big> <br> <br>
+    <big>KDATA menu ==> Default User & Password</big> <br> <br>
 ##########################################<br>
 ##########################################<br><br><br>
      <big>Ban nhap sai Username hoac Password!</big><br>
-    <big>Lay thong tin username va password trong email quan ly hoac trong /home/VPSSIM-manage-info.txt !</big><br>
+    <big>Lay thong tin username va password trong email quan ly hoac trong /home/KDATA-manage-info.txt !</big><br>
     <big>Hoac tao thong tin username va password moi theo duong dan:</big><br>
-    <big>VPSSIM menu ==> User & Password Mac Dinh</big><br>
+    <big>KDATA menu ==> User & Password Mac Dinh</big><br>
 </body></html>
 EOB;
         exit(1);

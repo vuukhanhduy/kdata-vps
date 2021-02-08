@@ -65,10 +65,10 @@ echo "-------------------------------------------------------------------------"
 sleep 2
 randomwp=`date |md5sum |cut -c '1-7'`
 echo "`date '+%d%m%H'`" > /tmp/datetime
-if [ ! -d /home/$website/public_html/0-VPSSIM ]; then
-mkdir -p /home/$website/public_html/0-VPSSIM
+if [ ! -d /home/$website/public_html/0-KDATA ]; then
+mkdir -p /home/$website/public_html/0-KDATA
 fi
-cd /home/$website/public_html/0-VPSSIM
+cd /home/$website/public_html/0-KDATA
 if [ "$(grep "default_storage_engine = MyISAM" /etc/my.cnf.d/server.cnf | awk 'NR==1 {print $3}')" = "MyISAM" ]; then
 mysqldump -u root -p$mariadbpass $tendatabase --lock-tables=false | gzip -6 > $tendatabase-$randomwp-$(cat /tmp/datetime).sql.gz
 else
@@ -77,13 +77,13 @@ fi
 
 cd
 clear
-if [ -f /home/$website/public_html/0-VPSSIM/$tendatabase-$randomwp-$(cat /tmp/datetime).sql.gz ]; then
+if [ -f /home/$website/public_html/0-KDATA/$tendatabase-$randomwp-$(cat /tmp/datetime).sql.gz ]; then
 echo "========================================================================="
 echo "Sao luu database $tendatabase thanh cong !"
 echo "-------------------------------------------------------------------------"
 echo "Link download backup:"
 echo "-------------------------------------------------------------------------"
-echo "http://$website/0-VPSSIM/$tendatabase-$randomwp-$(cat /tmp/datetime).sql.gz"
+echo "http://$website/0-KDATA/$tendatabase-$randomwp-$(cat /tmp/datetime).sql.gz"
 /etc/kdata/menu/kdata-wordpress-tools-menu
 else
 echo "=========================================================================" 

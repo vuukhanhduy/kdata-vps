@@ -16,7 +16,7 @@ sleep 3
 crontab -r
 clear
 echo "========================================================================= "
-echo "VPSSIM hoan tat xoa cac crontab hien tai"
+echo "KDATA hoan tat xoa cac crontab hien tai"
 /etc/kdata/menu/crontab/kdata-cronjob-menu
 ;;
     *)

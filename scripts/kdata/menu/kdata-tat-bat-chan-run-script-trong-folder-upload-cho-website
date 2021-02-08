@@ -52,7 +52,7 @@ clear
 echo "========================================================================="
 echo "Ban da thay doi config Vhost mac dinh cua $website"
 echo "-------------------------------------------------------------------------"
-echo "VPSSIM khong the thuc hien yeu cau cua ban"
+echo "KDATA khong the thuc hien yeu cau cua ban"
 /etc/kdata/menu/kdata-block-exploits-sql-injections-menu
 exit
 fi
@@ -63,7 +63,7 @@ clear
 echo "========================================================================="
 echo "Ban da thay doi config Vhost mac dinh cua $website"
 echo "-------------------------------------------------------------------------"
-echo "VPSSIM khong the thuc hien yeu cau cua ban"
+echo "KDATA khong the thuc hien yeu cau cua ban"
 /etc/kdata/menu/kdata-block-exploits-sql-injections-menu
 exit
 fi

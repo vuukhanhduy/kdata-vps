@@ -7,7 +7,7 @@ clear
 echo "========================================================================="
 echo "Chuc nang tu dong gia han chung chi SSL Let's Encrypt da duoc BAT."
 echo "-------------------------------------------------------------------------"
-echo "VPSSIM se auto renew SSL 10 ngay truoc khi SSL het han."
+echo "KDATA se auto renew SSL 10 ngay truoc khi SSL het han."
 /etc/kdata/menu/kdata-letsencrypt-menu
 fi
 echo "========================================================================="
@@ -33,7 +33,7 @@ clear
 echo "========================================================================="
 echo "Hoan thanh cai dat tu dong gia han chung chi SSL Let's Encrypt."
 echo "-------------------------------------------------------------------------"
-echo "VPSSIM se auto renew SSL 10 ngay truoc khi SSL het han."
+echo "KDATA se auto renew SSL 10 ngay truoc khi SSL het han."
 /etc/kdata/menu/kdata-letsencrypt-menu
 ;;
     *)

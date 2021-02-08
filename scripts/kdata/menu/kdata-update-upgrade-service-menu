@@ -1,11 +1,11 @@
 #!/bin/bash
 prompt="Lua chon cua ban (0-Thoat):" 
-#options=( "Update System" "Update VPSSIM" "Change Nginx Version" "Change phpMyAdmin Version" "Upgrade MariaDB to 10.0 Version" "Change PHP Version" "Change VPSSIM Language" "Thoat")
-#options=( "Update System" "Update VPSSIM" "Update Nginx" "Change phpMyAdmin Version" "Change PHP Version" "Change VPSSIM Language" "Update OpenSSL version" "Reset code form git" "List soft version")
-options=( "Update System" "Update ECHBAY-VPSSIM" "Update Nginx" "Change phpMyAdmin Version" "Change PHP Version" "Update OpenSSL version" \
+#options=( "Update System" "Update KDATA" "Change Nginx Version" "Change phpMyAdmin Version" "Upgrade MariaDB to 10.0 Version" "Change PHP Version" "Change KDATA Language" "Thoat")
+#options=( "Update System" "Update KDATA" "Update Nginx" "Change phpMyAdmin Version" "Change PHP Version" "Change KDATA Language" "Update OpenSSL version" "Reset code form git" "List soft version")
+options=( "Update System" "Update KDATA-VPS" "Update Nginx" "Change phpMyAdmin Version" "Change PHP Version" "Update OpenSSL version" \
 "Pull code form git" "Reset code form git" "List soft version" "Nginx quiche" "Auto update system")
 printf "=========================================================================\n"
-printf "                VPSSIM - Quan Ly VPS/Server by WebGiaRe.org \n"
+printf "                KDATA - Quan Ly VPS/Server by WebGiaRe.org \n"
 printf "=========================================================================\n"
 printf "                        Update / Upgrade Service \n"
 printf "=========================================================================\n"

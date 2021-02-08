@@ -232,7 +232,7 @@ return 1
 
     esc_pass=`basic_single_escape "$password1"`
     do_query "UPDATE mysql.user SET Password=PASSWORD('$esc_pass') WHERE User='root';"
-    cat >> "/home/vpssim.conf" <<END
+    cat >> "/home/kdata.conf" <<END
 mariadbpass="$password1"
 END
     if [ $? -eq 0 ]; then

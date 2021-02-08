@@ -23,7 +23,7 @@ case $response in
 if [[ "$checkurlstt" == "000" ]]; then
 clear
 echo "========================================================================="
-echo "Can not connect to VPSSIM.COM"
+echo "Can not connect to KDATA.COM"
 echo "-------------------------------------------------------------------------"
 echo "Please check your server internet connection !"
 /etc/kdata/menu/kdata-bitsync-menu
@@ -70,7 +70,7 @@ case $response in
 if [[ "$checkurlstt" == "000" ]]; then
 clear
 echo "========================================================================="
-echo "Can not connect to VPSSIM.COM"
+echo "Can not connect to KDATA.COM"
 echo "-------------------------------------------------------------------------"
 echo "Please check your server internet connection !"
 /etc/kdata/menu/kdata-bitsync-menu

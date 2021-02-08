@@ -40,7 +40,7 @@ fi
 prompt="Nhap lua chon cua ban: "
 options=( "Redis Cache" "WP Super cache" "W3 Total Cache" "Huy bo")
 printf "=========================================================================\n"
-printf "Tuy thuoc vao loai cache ban su dung ma VPSSIM config Vhost cho phu hop  \n"
+printf "Tuy thuoc vao loai cache ban su dung ma KDATA config Vhost cho phu hop  \n"
 printf "=========================================================================\n"
 PS3="$prompt"
 select opt in "${options[@]}"; do 

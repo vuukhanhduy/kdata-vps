@@ -60,30 +60,30 @@ date -r /var/lib/mysql/$dataname +%H%M%S> /tmp/kdata1
 randomcode=`date |md5sum |cut -c '1-13'`
 if [ ! -f /home/$mainsite/private_html/backup/$dataname/*.sql.gz ]; then
      
-   if [ -f /home/$website/public_html/VPSSIM-DATABASE.tar.gz ]; then
+   if [ -f /home/$website/public_html/KDATA-DATABASE.tar.gz ]; then
    /etc/kdata/menu/kdata-phuc-hoi-database-kdata-database-tar-gz
-   elif [ -f /home/$website/public_html/VPSSIM-DATABASE.sql.gz ]; then
+   elif [ -f /home/$website/public_html/KDATA-DATABASE.sql.gz ]; then
    /etc/kdata/menu/kdata-phuc-hoi-database-kdata-database-sql-gz
-   elif [ -f /home/$website/public_html/VPSSIM-DATABASE.zip ]; then
+   elif [ -f /home/$website/public_html/KDATA-DATABASE.zip ]; then
    /etc/kdata/menu/kdata-phuc-hoi-database-kdata-database-zip
-   elif [ -f /home/$website/public_html/VPSSIM-DATABASE.sql ]; then
+   elif [ -f /home/$website/public_html/KDATA-DATABASE.sql ]; then
    /etc/kdata/menu/kdata-phuc-hoi-database-kdata-database-sql
    else
 	clear
 	echo "========================================================================="
 	echo "CACH PHUC HOI DATABASE"
 	echo "========================================================================="
-	echo "Dinh dang backup VPSSIM ho tro phuc hoi: .SQL, .ZIP, .SQL.GZ va .TAR.GZ"
+	echo "Dinh dang backup KDATA ho tro phuc hoi: .SQL, .ZIP, .SQL.GZ va .TAR.GZ"
 	echo "-------------------------------------------------------------------------"
 	echo "Tuy theo dinh dang file backup ma ban thuc hien:"
 	echo "-------------------------------------------------------------------------"
-	echo "Dinh dang .SQL    => Doi ten file backup thanh VPSSIM-DATABASE.sql"
+	echo "Dinh dang .SQL    => Doi ten file backup thanh KDATA-DATABASE.sql"
 	echo "-------------------------------------------------------------------------"
-	echo "Dinh dang .ZIP    => Doi ten file backup thanh VPSSIM-DATABASE.zip"
+	echo "Dinh dang .ZIP    => Doi ten file backup thanh KDATA-DATABASE.zip"
 	echo "-------------------------------------------------------------------------"
-	echo "Dinh dang .SQL.GZ => Doi ten backup thanh VPSSIM-DATABASE.sql.gz"
+	echo "Dinh dang .SQL.GZ => Doi ten backup thanh KDATA-DATABASE.sql.gz"
 	echo "-------------------------------------------------------------------------"
-	echo "Dinh dang .TAR.GZ => Doi ten backup thanh VPSSIM-DATABASE.tar.gz"
+	echo "Dinh dang .TAR.GZ => Doi ten backup thanh KDATA-DATABASE.tar.gz"
 	echo "-------------------------------------------------------------------------"
 	echo "Sau do upload len:"
 	echo "-------------------------------------------------------------------------"
@@ -91,15 +91,15 @@ if [ ! -f /home/$mainsite/private_html/backup/$dataname/*.sql.gz ]; then
 	echo "========================================================================="
 	read -p "Khi upload hoan thanh. Nhan [Enter] de phuc hoi..."
 	echo "-------------------------------------------------------------------------"
-	echo "VPSSIM dang tim kiem file backup .... "
+	echo "KDATA dang tim kiem file backup .... "
 	sleep 4
-	if [ -f /home/$website/public_html/VPSSIM-DATABASE.tar.gz ]; then
+	if [ -f /home/$website/public_html/KDATA-DATABASE.tar.gz ]; then
    /etc/kdata/menu/kdata-phuc-hoi-database-kdata-database-tar-gz
-    elif [ -f /home/$website/public_html/VPSSIM-DATABASE.sql.gz ]; then
+    elif [ -f /home/$website/public_html/KDATA-DATABASE.sql.gz ]; then
    /etc/kdata/menu/kdata-phuc-hoi-database-kdata-database-sql-gz
-    elif [ -f /home/$website/public_html/VPSSIM-DATABASE.zip ]; then
+    elif [ -f /home/$website/public_html/KDATA-DATABASE.zip ]; then
    /etc/kdata/menu/kdata-phuc-hoi-database-kdata-database-zip
-    elif [ -f /home/$website/public_html/VPSSIM-DATABASE.sql ]; then
+    elif [ -f /home/$website/public_html/KDATA-DATABASE.sql ]; then
    /etc/kdata/menu/kdata-phuc-hoi-database-kdata-database-sql
     else
 	clear
@@ -152,7 +152,7 @@ if [ "$luachonphuchoi" = "phuchoitufilebackup" ]; then
 echo "--------------------------------------------------------------------------"
 echo "Please wait ...."
 echo "--------------------------------------------------------------------------"
-echo "VPSSIM dang Restore $dataname ..."
+echo "KDATA dang Restore $dataname ..."
 sleep 3
 gunzip < /home/$mainsite/private_html/backup/$dataname/$filename | mysql -u root -p$mariadbpass $dataname
 date -r /var/lib/mysql/$dataname +%H%M%S> /tmp/kdata2
@@ -180,30 +180,30 @@ check2=`cat /tmp/kdata2`
 ###################################
 elif [ "$luachonphuchoi" = "uploadsaudophuchoi" ]; then
 randomcode=`date |md5sum |cut -c '1-12'`
-	if [ -f /home/$website/public_html/VPSSIM-DATABASE.tar.gz ]; then
+	if [ -f /home/$website/public_html/KDATA-DATABASE.tar.gz ]; then
    /etc/kdata/menu/kdata-phuc-hoi-database-kdata-database-tar-gz
-    elif [ -f /home/$website/public_html/VPSSIM-DATABASE.sql.gz ]; then
+    elif [ -f /home/$website/public_html/KDATA-DATABASE.sql.gz ]; then
    /etc/kdata/menu/kdata-phuc-hoi-database-kdata-database-sql-gz
-    elif [ -f /home/$website/public_html/VPSSIM-DATABASE.zip ]; then
+    elif [ -f /home/$website/public_html/KDATA-DATABASE.zip ]; then
    /etc/kdata/menu/kdata-phuc-hoi-database-kdata-database-zip
-    elif [ -f /home/$website/public_html/VPSSIM-DATABASE.sql ]; then
+    elif [ -f /home/$website/public_html/KDATA-DATABASE.sql ]; then
    /etc/kdata/menu/kdata-phuc-hoi-database-kdata-database-sql
     else
 	clear
 	echo "========================================================================="
 	echo "CACH PHUC HOI DATABASE"
 	echo "========================================================================="
-	echo "Dinh dang backup VPSSIM ho tro phuc hoi: .SQL, .ZIP, .SQL.GZ va .TAR.GZ"
+	echo "Dinh dang backup KDATA ho tro phuc hoi: .SQL, .ZIP, .SQL.GZ va .TAR.GZ"
 	echo "-------------------------------------------------------------------------"
 	echo "Tuy theo dinh dang file backup ma ban thuc hien:"
 	echo "-------------------------------------------------------------------------"
-	echo "Dinh dang .SQL    => Doi ten file backup thanh VPSSIM-DATABASE.sql"
+	echo "Dinh dang .SQL    => Doi ten file backup thanh KDATA-DATABASE.sql"
 	echo "-------------------------------------------------------------------------"
-	echo "Dinh dang .ZIP    => Doi ten file backup thanh VPSSIM-DATABASE.zip"
+	echo "Dinh dang .ZIP    => Doi ten file backup thanh KDATA-DATABASE.zip"
 	echo "-------------------------------------------------------------------------"
-	echo "Dinh dang .SQL.GZ => Doi ten backup thanh VPSSIM-DATABASE.sql.gz"
+	echo "Dinh dang .SQL.GZ => Doi ten backup thanh KDATA-DATABASE.sql.gz"
 	echo "-------------------------------------------------------------------------"
-	echo "Dinh dang .TAR.GZ => Doi ten backup thanh VPSSIM-DATABASE.tar.gz"
+	echo "Dinh dang .TAR.GZ => Doi ten backup thanh KDATA-DATABASE.tar.gz"
 	echo "-------------------------------------------------------------------------"
 	echo "Sau do upload len:"
 	echo "-------------------------------------------------------------------------"
@@ -211,15 +211,15 @@ randomcode=`date |md5sum |cut -c '1-12'`
 	echo "========================================================================="
 	read -p "Khi upload hoan thanh. Nhan [Enter] de phuc hoi..."
 	echo "-------------------------------------------------------------------------"
-	echo "VPSSIM dang tim kiem file backup ... "
+	echo "KDATA dang tim kiem file backup ... "
 	sleep 4
-	if [ -f /home/$website/public_html/VPSSIM-DATABASE.tar.gz ]; then
+	if [ -f /home/$website/public_html/KDATA-DATABASE.tar.gz ]; then
    /etc/kdata/menu/kdata-phuc-hoi-database-kdata-database-tar-gz
-    elif [ -f /home/$website/public_html/VPSSIM-DATABASE.sql.gz ]; then
+    elif [ -f /home/$website/public_html/KDATA-DATABASE.sql.gz ]; then
    /etc/kdata/menu/kdata-phuc-hoi-database-kdata-database-sql-gz
-    elif [ -f /home/$website/public_html/VPSSIM-DATABASE.zip ]; then
+    elif [ -f /home/$website/public_html/KDATA-DATABASE.zip ]; then
    /etc/kdata/menu/kdata-phuc-hoi-database-kdata-database-zip
-    elif [ -f /home/$website/public_html/VPSSIM-DATABASE.sql ]; then
+    elif [ -f /home/$website/public_html/KDATA-DATABASE.sql ]; then
    /etc/kdata/menu/kdata-phuc-hoi-database-kdata-database-sql
     else
 	clear

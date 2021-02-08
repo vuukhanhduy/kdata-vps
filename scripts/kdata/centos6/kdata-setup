@@ -17,9 +17,9 @@ echo "Mac dinh server se duoc cai dat PHP "$phpmacdinh". Neu muon su dung phien 
 echo "--------------------------------------------------------------------------"
 echo "khac, sau khi cai dat server xong dung chuc nang [ Change PHP Version ] "
 echo "--------------------------------------------------------------------------"
-echo "trong [ Update System ] cua ECHBAY-VPSSIM."
+echo "trong [ Update System ] cua KDATA-VPS."
 echo "--------------------------------------------------------------------------"
-echo "VPSSIM ho tro: PHP 7.2, PHP 7.1, PHP 7.0, PHP 5.6, PHP 5.5 & PHP 5.4"
+echo "KDATA ho tro: PHP 7.2, PHP 7.1, PHP 7.0, PHP 5.6, PHP 5.5 & PHP 5.4"
 cpuname=$( awk -F: '/model name/ {name=$2} END {print name}' /proc/cpuinfo )
 cpucores=$( awk -F: '/model name/ {core++} END {print core}' /proc/cpuinfo )
 cpufreq=$( awk -F: ' /cpu MHz/ {freq=$2} END {print freq}' /proc/cpuinfo )
@@ -46,7 +46,7 @@ read svport
 if [ "$svport" = "80" ] || [ "$svport" = "443" ] || [ "$svport" = "22" ] || [ "$svport" = "3306" ] || [ "$svport" = "25" ] || [ "$svport" = "465" ] || [ "$svport" = "587" ] || [ "$svport" = "21" ]; then
 	svport="1241"
 echo "Phpmyadmin khong the trung voi port cua dich vu khac !"
-echo "ECHBAY-VPSSIM se dat phpmyadmin port la "$svport
+echo "KDATA-VPS se dat phpmyadmin port la "$svport
 fi
 if [ "$svport" = "" ] ; then
 clear
@@ -171,7 +171,7 @@ passrootmysql=`date |md5sum |cut -c '1-12'`
 echo "$passrootmysql" > /tmp/passrootmysql
 
 ###############################################################################
-#Download Nginx, VPSSIM & phpMyadmin Version
+#Download Nginx, KDATA & phpMyadmin Version
 cd /tmp
 rm -rf 00-all-nginx-version.txt
 rm -rf kdata.newversion
@@ -214,7 +214,7 @@ phpmyadmin_version=`cat /tmp/00-all-phpmyadmin-version.txt | awk 'NR==2 {print $
 #Nginx_VERSION=`cat /tmp/00-all-nginx-version.txt | awk 'NR==2 {print $1}' | sed 's/|//' | sed 's/|//'`
 kdata_version=`cat /tmp/kdata.newversion`
 
-# End Download Nginx, ECHBAY-VPSSIM & phpMyadmin Version
+# End Download Nginx, KDATA-VPS & phpMyadmin Version
 ###############################################################################
 
 clear
@@ -222,7 +222,7 @@ clear
 echo "=========================================================================="
 echo "OS Version: "$(rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release))
 echo "--------------------------------------------------------------------------"
-echo "ECHBAY-VPSSIM Se Cai Dat Server Theo Thong Tin:"
+echo "KDATA-VPS Se Cai Dat Server Theo Thong Tin:"
 echo "=========================================================================="
 echo "eMail Quan Ly: $kdataemail"
 echo "--------------------------------------------------------------------------"
@@ -238,7 +238,7 @@ echo "Nginx Version: $Nginx_VERSION"
 echo "--------------------------------------------------------------------------"
 echo "PHP Version: "$phpmacdinh
 echo "--------------------------------------------------------------------------"
-echo "ECHBAY-VPSSIM Version: $kdata_version"
+echo "KDATA-VPS Version: $kdata_version"
 echo "=========================================================================="
 prompt="Nhap lua chon cua ban: "
 options=( "Dong Y" "Khong Dong Y")
@@ -254,7 +254,7 @@ done
 
 if [ "$xacnhanthongtin" = "dongy" ]; then
 echo "--------------------------------------------------------------------------"
-echo "Chuan Bi Cai Dat ECHBAY-VPSSIM ..."
+echo "Chuan Bi Cai Dat KDATA-VPS ..."
 sleep 2
 else 
 clear
@@ -273,7 +273,7 @@ fi
 cat >> "/root/.bash_profile" <<END
 IPkdatacheck="\$(echo \$SSH_CONNECTION | cut -d " " -f 1)"
 timeloginkdatacheck=\$(date +"%e %b %Y, %a %r")
-echo 'Someone has IP address '\$IPkdatacheck' login to $svip on '\$timeloginkdatacheck'.' | mail -s 'eMail Notifications From ECHBAY-VPSSIM On $svip ' ${kdataemail}
+echo 'Someone has IP address '\$IPkdatacheck' login to $svip on '\$timeloginkdatacheck'.' | mail -s 'eMail Notifications From KDATA-VPS On $svip ' ${kdataemail}
 END
 echo "$svport" > /tmp/priport.txt
 if [ -s /etc/selinux/config ]; then
@@ -560,15 +560,15 @@ rm -f /tmp/kdataSetConfigFile
 kdata_setup_cleanup_config_file "/etc/php.ini"
 
 
-if [ ! -d /home/0-VPSSIM-SHORTCUT ];then
+if [ ! -d /home/0-KDATA-SHORTCUT ];then
 #wget --no-check-certificate -q https://kdata.echbay.com/scripts/kdata/check-imagick.php.zip -O /home/kdata.demo/private_html/check-imagick.php
 yes | cp -rf /opt/vps_kdata/scripts/kdata/check-imagick.php.zip /home/kdata.demo/private_html/check-imagick.php
-mkdir -p /home/0-VPSSIM-SHORTCUT
+mkdir -p /home/0-KDATA-SHORTCUT
 mkdir -p /home/kdata.demo/private_html/backup
-ln -s /home/kdata.demo/private_html/backup /home/0-VPSSIM-SHORTCUT/Backup\ \(Website\ +\ Database\)
-ln -s /etc/nginx/conf.d /home/0-VPSSIM-SHORTCUT/Vhost\ \(Vitual\ Host\)
-echo "This is shortcut to Backup ( Code & Database ) and Vitual Host in VPS" > /home/0-VPSSIM-SHORTCUT/readme.txt
-echo "Please do not delete it" >>  /home/0-VPSSIM-SHORTCUT/readme.txt
+ln -s /home/kdata.demo/private_html/backup /home/0-KDATA-SHORTCUT/Backup\ \(Website\ +\ Database\)
+ln -s /etc/nginx/conf.d /home/0-KDATA-SHORTCUT/Vhost\ \(Vitual\ Host\)
+echo "This is shortcut to Backup ( Code & Database ) and Vitual Host in VPS" > /home/0-KDATA-SHORTCUT/readme.txt
+echo "Please do not delete it" >>  /home/0-KDATA-SHORTCUT/readme.txt
 fi
 
 rm -f /etc/php.d/*opcache*
@@ -942,7 +942,7 @@ mkdir -p /var/lib/php/session
 chown -R nginx:nginx /var/lib/php
 clear
 echo "=========================================================================="
-echo "Dang Tao ECHBAY-VPSSIM Menu...... "
+echo "Dang Tao KDATA-VPS Menu...... "
 echo "=========================================================================="
 
 rm -rf /etc/motd
@@ -961,7 +961,7 @@ download_kdata_main_menu
 fi
 
 cd /etc/kdata/
-# Download ECHBAY-VPSSIM data
+# Download KDATA-VPS data
 download_kdata_data () {
 #rm -rf menu.zip
 #wget --no-check-certificate -q https://kdata.echbay.com/scripts/kdata/menu.zip
@@ -1083,7 +1083,7 @@ sleep 3
 #service memcached start
 rm -rf /root/install*
 rm -rf /root/kdata-setup
-cat >> "/home/VPSSIM-manage-info.txt" <<END
+cat >> "/home/KDATA-manage-info.txt" <<END
 =========================================================================
                            VPS MANAGE INFOMATION                        
 =========================================================================
@@ -1101,7 +1101,7 @@ Thong tin dang nhap phpMyadmin, quan ly Zend Opcache, status.php, download backu
 Username: $usernamebv
 Password: $matkhaubv 
 
-Lenh truy cap ECHBAY-VPSSIM: kdata
+Lenh truy cap KDATA-VPS: kdata
 
 LUU Y: 
 
@@ -1111,7 +1111,7 @@ va su dung cac Plugin cache(wp super cache....) cho website.
 Neu VPS dang bat Zend Opcache, khi edit file PHP, do cac file php duoc cache vao RAM  
 nen ban can clear Zend Opcache de thay doi duoc cap nhat. 
 
-Chuc ban se thanh cong cung ECHBAY-VPSSIM .
+Chuc ban se thanh cong cung KDATA-VPS .
 END
 # increase SSH login speed
 if [ -f /etc/ssh/sshd_config ]; then 
@@ -1124,14 +1124,14 @@ fi
 #fi
     cat > "/tmp/finishedemail.sh" <<END
 #!/bin/bash 
-echo -e 'Subject: ECHBAY-VPSSIM - Chuc mung cai dat thanh cong $svip!
+echo -e 'Subject: KDATA-VPS - Chuc mung cai dat thanh cong $svip!
 
 Chao ban!
 
-Chuc mung ban da hoan thanh qua trinh cai dat va cau hinh server $svip bang ECHBAY-VPSSIM.
+Chuc mung ban da hoan thanh qua trinh cai dat va cau hinh server $svip bang KDATA-VPS.
 Sau day la thong tin quan ly server cua ban:
 
-+ Lenh goi ECHBAY-VPSSIM: kdata
++ Lenh goi KDATA-VPS: kdata
 + Link phpMyAdmin: http://$svip:$svport
 + Quan Ly Zend Opcache: http://$svip:$svport/ocp.php
 + Quan Ly Memcached: http://$svip:$svport/memcache.php
@@ -1152,10 +1152,10 @@ Luu Y:
 + Sau khi Upload code len server. Ban phai chay chuc nang [ Fix Loi Chmod, Chown ] trong [ Tien Ich - Addons ] de thiet lap phan quyen cho website. 
   Neu website su dung code wordpress, thiet lap phan quyen cho website bang chuc nang [ Fix loi Permission ] trong [ Wordpress Blog Tools ]
 + Tuy theo so luong website, dung luong code ma ban cau hinh lai Zend Opcache, Memcached, Redis Cache bang chuc nang [ Quan Ly Memcached ], [ Quan Ly Zend Opcache ] , [ Quan Ly Redis Cache ] cho phu hop.
-+ De bao mat, moi khi co dang nhap SSH va Server, ECHBAY-VPSSIM se gui email thong bao toi dia chi email $kdataemail .
++ De bao mat, moi khi co dang nhap SSH va Server, KDATA-VPS se gui email thong bao toi dia chi email $kdataemail .
   Thay email hoac tat chuc nang nay bang [ BAT/TAT Email Thong Bao Login ] trong [ Tien ich - Addons ].  
   
-VPSSIM by Nguyen Oanh - http://hostingaz.vn' | exim  $kdataemail
+KDATA by Nguyen Oanh - http://hostingaz.vn' | exim  $kdataemail
 END
 chmod +x /tmp/finishedemail.sh
 /tmp/finishedemail.sh
@@ -1169,9 +1169,9 @@ sleep 1
 
 clear
 echo "=========================================================================="
-echo "VPSSIM da hoan tat qua trinh cai dat Server. "
+echo "KDATA da hoan tat qua trinh cai dat Server. "
 echo "=========================================================================="
-echo "Lenh goi ECHBAY-VPSSIM: kdata"
+echo "Lenh goi KDATA-VPS: kdata"
 echo "--------------------------------------------------------------------------"
 echo "Link phpMyAdmin: http://$svip:$svport"
 echo "--------------------------------------------------------------------------"
@@ -1185,11 +1185,11 @@ echo "Thong tin username & password bao ve phpMyAdmin, ocp.php, status.php ..."
 echo "--------------------------------------------------------------------------"
 echo "Username: $usernamebv  | Password: $matkhaubv"
 echo "--------------------------------------------------------------------------"
-echo "Thay thong tin dang nhap nay: ECHBAY-VPSSIM menu ==> User & Password Mac Dinh. "
+echo "Thay thong tin dang nhap nay: KDATA-VPS menu ==> User & Password Mac Dinh. "
 echo "=========================================================================="
-echo "Thong tin quan ly duoc luu tai: /home/VPSSIM-manage-info.txt "
+echo "Thong tin quan ly duoc luu tai: /home/KDATA-manage-info.txt "
 echo "--------------------------------------------------------------------------"
-echo "va gui kem luu y su dung ECHBAY-VPSSIM toi: $kdataemail"
+echo "va gui kem luu y su dung KDATA-VPS toi: $kdataemail"
 echo "=========================================================================="
 echo "Server se tu khoi dong lai sau 3 giay.... "
 sleep 3

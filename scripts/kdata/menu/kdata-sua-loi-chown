@@ -2,7 +2,7 @@
 clear
 
 printf "=========================================================================\n"
-printf "            VPSSIM - Manage VPS/Server by HostingAZ.VN \n"
+printf "            KDATA - Manage VPS/Server by HostingAZ.VN \n"
 printf "=========================================================================\n"
 printf "                       Fix Loi chmod & chown                               \n"
 printf "=========================================================================\n"

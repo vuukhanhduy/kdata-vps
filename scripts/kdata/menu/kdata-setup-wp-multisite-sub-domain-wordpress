@@ -126,8 +126,8 @@ elif [ "$luachoncaidat" = "sauluuroicai" ]; then
 tendatabase=`cat /home/$website/public_html/wp-config.php | grep DB_NAME | cut -d \' -f 4`
 echo "`date '+%d%m'`" > /tmp/datetime
 tenmo=$(cat /tmp/datetime)
-if [ ! -d /home/$website/public_html/0-VPSSIM ]; then
-mkdir -p /home/$website/public_html/0-VPSSIM
+if [ ! -d /home/$website/public_html/0-KDATA ]; then
+mkdir -p /home/$website/public_html/0-KDATA
 fi
 echo "-------------------------------------------------------------------------"
 echo "Please wait ..."
@@ -136,14 +136,14 @@ sleep 2
 cd /home/$website/public_html
 #wp db export $tendatabase-$tenmo --allow-root
 randomwp=`date |md5sum |cut -c '1-16'`
-#mv -f /home/$website/public_html/$tendatabase-$tenmo /home/$website/public_html/0-VPSSIM/$tendatabase-$tenmo.Before-WP-Multisite_$randomwp
+#mv -f /home/$website/public_html/$tendatabase-$tenmo /home/$website/public_html/0-KDATA/$tendatabase-$tenmo.Before-WP-Multisite_$randomwp
 if [ "$(grep "default_storage_engine = MyISAM" /etc/my.cnf.d/server.cnf | awk 'NR==1 {print $3}')" = "MyISAM" ]; then
-mysqldump -u root -p$mariadbpass $tendatabase --lock-tables=false | gzip -9 > /home/$website/public_html/0-VPSSIM/$tendatabase-$tenmo.Before-WP-Multisite_$randomwp.sql.gz
+mysqldump -u root -p$mariadbpass $tendatabase --lock-tables=false | gzip -9 > /home/$website/public_html/0-KDATA/$tendatabase-$tenmo.Before-WP-Multisite_$randomwp.sql.gz
 else
-mysqldump -u root -p$mariadbpass $tendatabase --single-transaction | gzip -9 > /home/$website/public_html/0-VPSSIM/$tendatabase-$tenmo.Before-WP-Multisite_$randomwp.sql.gz
+mysqldump -u root -p$mariadbpass $tendatabase --single-transaction | gzip -9 > /home/$website/public_html/0-KDATA/$tendatabase-$tenmo.Before-WP-Multisite_$randomwp.sql.gz
 fi
 
-cp /home/$website/public_html/wp-config.php /home/$website/public_html/0-VPSSIM/wp-config.php-$tenmo.Before-WP-Multisite_$randomwp
+cp /home/$website/public_html/wp-config.php /home/$website/public_html/0-KDATA/wp-config.php-$tenmo.Before-WP-Multisite_$randomwp
 wp core multisite-convert --subdomains --allow-root
 cd
 if [ "$(rpm -q --qf "%{VERSION}" $(rpm -q --whatprovides redhat-release))" == "6" ]; then 
@@ -164,11 +164,11 @@ echo "========================================================================="
 echo "Cai dat Wordpress Multisite cho $website that bai !"
 fi
 
-if [ -f /home/$website/public_html/0-VPSSIM/$tendatabase-$tenmo.Before-WP-Multisite_$randomwp.sql.gz ]; then
+if [ -f /home/$website/public_html/0-KDATA/$tendatabase-$tenmo.Before-WP-Multisite_$randomwp.sql.gz ]; then
 echo "-------------------------------------------------------------------------"
 echo "Sao luu Database & wp-config.php thanh cong"
 echo "-------------------------------------------------------------------------"
-echo "Link foler backup: http://$website/0-VPSSIM"
+echo "Link foler backup: http://$website/0-KDATA"
 else
 echo "-------------------------------------------------------------------------"
 echo "Sao luu database that bai !"

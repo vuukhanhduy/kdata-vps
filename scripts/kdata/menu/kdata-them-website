@@ -45,7 +45,7 @@ add_index_html(){
 cat > "/home/$website/public_html/index.html" <<END
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 	<head>
-		<title>Them $website vao server bang VPSSIM thanh cong !</title>
+		<title>Them $website vao server bang KDATA thanh cong !</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<style type="text/css">
 			/*<![CDATA[*/
@@ -74,7 +74,7 @@ cat > "/home/$website/public_html/index.html" <<END
 		</style>
 	</head>
 	<body>
-		<h1><strong>Them $website vao server bang <a href="https://hostingaz.vn/3455-cai-dat-nginx-mariadb-php-fpm-lemp-toi-uu-bao-mat-vps-centos-kdata.html" title="Cai dat VPSSIM, huong dan cai dat VPSSIM tren VPS server" > VPSSIM</a> thanh cong !</strong></h1>
+		<h1><strong>Them $website vao server bang <a href="https://hostingaz.vn/3455-cai-dat-nginx-mariadb-php-fpm-lemp-toi-uu-bao-mat-vps-centos-kdata.html" title="Cai dat KDATA, huong dan cai dat KDATA tren VPS server" > KDATA</a> thanh cong !</strong></h1>
 			</body>
 </html>
 END
@@ -118,7 +118,7 @@ include /etc/nginx/conf/ddos2.conf;
 #///////////////////////////////////////////////////////
 # Ban chi co the chon 1 trong 4 rule AAA, BBB, CCC hoac DDD
 # Ban nen comment cac rule khong su dung thay vi xoa chung vi neu ban su dung wordpress blog 
-# Cac dong nay can thiet cho cac chuc nang trong Wordpress Blog Tools cua VPSSIM
+# Cac dong nay can thiet cho cac chuc nang trong Wordpress Blog Tools cua KDATA
 # Thuat ngu:
 # Comment - Them dau # vao truoc
 # Uncomment - Bo dau # o truoc cau.
@@ -142,8 +142,8 @@ include /etc/nginx/conf/all.conf;
 # Confif Cache Static Files
 include /etc/nginx/conf/staticfiles.conf;  
 
-#Tang bao mat security, chong sql injection  ....(uncoment neu ban muon su dung). Boi vi mot so code website khong su dung duoc voi rule nay, nen mac dinh VPSSIM de tat.
-#Khong duoc xoa dong duoi, neu xoa VPSSIM se khong hoat dong !
+#Tang bao mat security, chong sql injection  ....(uncoment neu ban muon su dung). Boi vi mot so code website khong su dung duoc voi rule nay, nen mac dinh KDATA de tat.
+#Khong duoc xoa dong duoi, neu xoa KDATA se khong hoat dong !
 #include /etc/nginx/conf/block.conf;
 
 # Error Page
@@ -191,7 +191,7 @@ mkdir -p /home/$website/errorpage_html && cp -r /etc/kdata/errorpage_html/*.html
 ############################################################################
 ############################################################################
 echo "-------------------------------------------------------------------------"
-read -r -p "Ban co muon VPSSIM tao Database moi cho $website ? [y/N] " response
+read -r -p "Ban co muon KDATA tao Database moi cho $website ? [y/N] " response
 case $response in
     [yY][eE][sS]|[yY])
     echo "-------------------------------------------------------------------------"

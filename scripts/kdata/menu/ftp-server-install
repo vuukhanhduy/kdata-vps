@@ -39,7 +39,7 @@ PassivePortRange          30000 50000
 TLS 1
 " >> /etc/pure-ftpd/pure-ftpd.conf ;
 
-openssl req -x509 -nodes -days 7200 -newkey rsa:2048 -keyout /etc/pki/pure-ftpd/pure-ftpd.pem -out /etc/pki/pure-ftpd/pure-ftpd.pem -subj "/C=US/ST=VPSSIM FTP/L=VPSSIM FTP/O=VPSSIM FTP/CN=VPSSIM FTP"
+openssl req -x509 -nodes -days 7200 -newkey rsa:2048 -keyout /etc/pki/pure-ftpd/pure-ftpd.pem -out /etc/pki/pure-ftpd/pure-ftpd.pem -subj "/C=US/ST=KDATA FTP/L=KDATA FTP/O=KDATA FTP/CN=KDATA FTP"
 
 if [ ! "$(grep /etc/ssl/private/pure-ftpd.pem /etc/pure-ftpd/pure-ftpd.conf)" == "" ]; then
 echo "
@@ -78,7 +78,7 @@ clear
 echo "-------------------------------------------------------------------------"
 echo "Phat hien CSF FireWall dang duoc cai dat tren VPS"
 echo "-------------------------------------------------------------------------"
-echo "VPSSIM se khoi dong lai CSF Firewall ...."
+echo "KDATA se khoi dong lai CSF Firewall ...."
 echo "-------------------------------------------------------------------------"
 echo "Please wait ...."
 sleep 5

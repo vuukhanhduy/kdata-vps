@@ -25,8 +25,8 @@ wget -q http://nginx.org/download/nginx-${Nginx_VERSION}.tar.gz
 tar -xzf nginx-${Nginx_VERSION}.tar.gz
 rm -rf /usr/local/kdata/nginx-${Nginx_VERSION}.tar.gz 
 cd /usr/local/kdata/nginx-${Nginx_VERSION}
-#sed -i 's/"Server: nginx"/"Server: Nginx-VPSSIM"/g' /usr/local/kdata/nginx-${Nginx_VERSION}/src/http/ngx_http_header_filter_module.c
-#sed -i 's/"Server: "/"Server: Nginx-VPSSIM"/g' /usr/local/kdata/nginx-${Nginx_VERSION}/src/http/ngx_http_header_filter_module.c
+#sed -i 's/"Server: nginx"/"Server: Nginx-KDATA"/g' /usr/local/kdata/nginx-${Nginx_VERSION}/src/http/ngx_http_header_filter_module.c
+#sed -i 's/"Server: "/"Server: Nginx-KDATA"/g' /usr/local/kdata/nginx-${Nginx_VERSION}/src/http/ngx_http_header_filter_module.c
 
 # tao cac thu muc cau hinh cua nginx neu chua co
 mkdir -p /var/lib/nginx/tmp

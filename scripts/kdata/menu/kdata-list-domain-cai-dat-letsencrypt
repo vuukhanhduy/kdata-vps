@@ -9,7 +9,7 @@ rm -rf /etc/kdata/.tmp/thanh_cong_SSL
 curTime=$(date +%s)
 for domain in $domainlist; do
 if [ -f /root/.acme.sh/$domain/$domain.conf ] && [ -f /etc/nginx/auth-acme/$domain/$domain.crt ]; then
-echo "Check SSL by VPSSIM" > /home/$domain/public_html/kdata.check
+echo "Check SSL by KDATA" > /home/$domain/public_html/kdata.check
 checkurlsttSSL=$(curl -o /dev/null --silent --head --write-out '%{http_code}' "https://$domain/kdata.check")
 rm -rf /home/$domain/public_html/kdata.check
 if [[  "$checkurlsttSSL" == "200" ]]; then

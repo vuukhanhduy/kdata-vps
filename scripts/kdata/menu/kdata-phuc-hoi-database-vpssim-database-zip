@@ -4,13 +4,13 @@ website=$(cat /tmp/kdata-tensitephuchoi)
 dataname=$(cat /tmp/kdata-tendatabasephuchoi)
 randomcode=`date |md5sum |cut -c '1-18'`
 echo "========================================================================="
-	echo "Tim thay file backup VPSSIM-DATABASE.zip"
+	echo "Tim thay file backup KDATA-DATABASE.zip"
 	echo "-------------------------------------------------------------------------"
 	echo "Chuan bi phuc hoi .... "
 	sleep 2
 	rm -rf /tmp/kdata-sql
 	mkdir -p /tmp/kdata-sql
-	unzip /home/$website/public_html/VPSSIM-DATABASE.zip -d /tmp/kdata-sql
+	unzip /home/$website/public_html/KDATA-DATABASE.zip -d /tmp/kdata-sql
 	ls /tmp/kdata-sql > /tmp/kdata-datasql-name
 	tenbackup=$(cat /tmp/kdata-datasql-name)
 	mysql -u root -p$mariadbpass $dataname < /tmp/kdata-sql/$tenbackup > /tmp/abc
@@ -29,12 +29,12 @@ echo "========================================================================="
 		/etc/kdata/menu/kdata-them-xoa-database
 		else	
 		rm -rf /tmp/*kdata*
-		mv /home/$website/public_html/VPSSIM-DATABASE.zip /home/$website/public_html/VPSSIM-DATABASE.zip.$randomcode
+		mv /home/$website/public_html/KDATA-DATABASE.zip /home/$website/public_html/KDATA-DATABASE.zip.$randomcode
 		clear
 		echo "========================================================================="
 		echo "Phuc hoi database $dataname thanh cong !"
 		echo "-------------------------------------------------------------------------"
-		echo "File backup duoc doi ten thanh VPSSIM-DATABASE.zip.$randomcode"
+		echo "File backup duoc doi ten thanh KDATA-DATABASE.zip.$randomcode"
 		/etc/kdata/menu/kdata-them-xoa-database
 		exit
 		fi
