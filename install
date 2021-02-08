@@ -16,5 +16,5 @@ chmod +x /root/git-clone
 bash /root/git-clone
 
 cd /opt/kdata_vps
-chmod +x setup
+chmod +etup
 bash setup
