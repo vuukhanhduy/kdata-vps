@@ -78,7 +78,7 @@ killall netdata
 cd /usr/local/kdata
 rm -rf netdata
 #wget --no-check-certificate -q https://kdata.com/script/kdata/Softwear/netdata_$REMOVER.zip
-wget --no-check-certificate -q https://github.com/itvn9online/echbay-kdata-software/raw/master/netdata_$REMOVER.zip
+wget --no-check-certificate -q https://github.com/vuukhanhduy/kdata-vps-software/raw/main/netdata_$REMOVER.zip
 unzip -o -q netdata_$REMOVER.zip
 rm -rf /usr/local/kdata/netdata_$REMOVER.zip
 cd /usr/local/kdata/netdata
