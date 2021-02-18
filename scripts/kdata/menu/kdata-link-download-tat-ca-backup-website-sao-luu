@@ -1,6 +1,6 @@
 #!/bin/bash
 . /home/kdata.conf
-rm -rf /tmp/*hostingaz*
+rm -rf /tmp/*kdata*
 mkdir -p /tmp/danhsachwebsitebackuphostingaz
 ls /etc/nginx/conf.d > /tmp/kdata-websitelist
 sed -i 's/\.conf//g' /tmp/kdata-websitelist
@@ -96,7 +96,7 @@ echo "-------------------------------------------------------------------------"
 echo "http://$serverip:$priport/listbackup-AW$code.txt"
 echo "" >> /home/$mainsite/private_html/listbackup-AW$code.txt
 echo "===================================================The End==============================================================" >> /home/$mainsite/private_html/listbackup-AW$code.txt
-rm -rf /tmp/*hostingaz*
+rm -rf /tmp/*kdata*
 /etc/kdata/menu/kdata-sao-luu
    ;;
     *)
@@ -104,7 +104,7 @@ rm -rf /tmp/*hostingaz*
         echo "========================================================================= "
         echo "Huy bo lay link download cac file backup"
         /etc/kdata/menu/kdata-sao-luu
-        rm -rf /tmp/*hostingaz*
+        rm -rf /tmp/*kdata*
         ;;
 esac
 

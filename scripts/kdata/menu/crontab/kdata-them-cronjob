@@ -6,7 +6,7 @@ else
 rm -rf /etc/kdata/crontab/*
 fi
 echo "========================================================================="
-echo "Xem cach tao lenh crontab tai: http://cronjob.hostingaz.vn"
+echo "Xem cach tao lenh crontab tai: http://cronjob.kdata.vn"
 echo "-------------------------------------------------------------------------"
 echo -n "Crontab ban muon them [ENTER]: " 
 read cronjob
@@ -33,7 +33,7 @@ clear
 echo "========================================================================= "
 echo "Them crontab that bai! Crontab cua ban co the khong chinh xac"
 echo "-------------------------------------------------------------------------"
-echo "Tao lenh crontab tai http://cronjob.hostingaz.vn"
+echo "Tao lenh crontab tai http://cronjob.kdata.vn"
 /etc/kdata/menu/crontab/kdata-cronjob-menu
 else
 rm -rf /etc/kdata/crontab/*

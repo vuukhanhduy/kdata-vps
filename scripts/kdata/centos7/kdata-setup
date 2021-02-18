@@ -931,7 +931,7 @@ service mysql start
 # Download mysql_secure_installation
 rm -f /bin/mysql_secure_installation
 download_mysql_secure_installation () {
-#wget --no-check-certificate -q https://hostingaz.vn/scripts/kdata/mysql_secure_installation -O /bin/mysql_secure_installation && chmod +x /bin/mysql_secure_installation
+#wget --no-check-certificate -q https://kdata.vn/scripts/kdata/mysql_secure_installation -O /bin/mysql_secure_installation && chmod +x /bin/mysql_secure_installation
 yes | cp -rf /opt/vps_kdata/scripts/kdata/mysql_secure_installation /bin/mysql_secure_installation && chmod +x /bin/mysql_secure_installation
 }
 download_mysql_secure_installation
@@ -981,13 +981,13 @@ echo "Dang Tao KDATA-VPS Menu...... "
 echo "=========================================================================="
 rm -rf /etc/motd
 
-#wget --no-check-certificate -q https://hostingaz.vn/scripts/kdata/motd -O /etc/motd
+#wget --no-check-certificate -q https://kdata.vn/scripts/kdata/motd -O /etc/motd
 yes | cp -rf /opt/vps_kdata/scripts/kdata/motd /etc/motd
 
 
 # Download kdata_main_menu
 download_kdata_main_menu () {
-#wget --no-check-certificate -q https://hostingaz.vn/scripts/kdata/kdata -O /bin/kdata && chmod +x /bin/kdata
+#wget --no-check-certificate -q https://kdata.vn/scripts/kdata/kdata -O /bin/kdata && chmod +x /bin/kdata
 yes | cp -rf /opt/vps_kdata/scripts/kdata/kdata /bin/kdata && chmod +x /bin/kdata
 }
 download_kdata_main_menu
@@ -1003,7 +1003,7 @@ cd /etc/kdata/
 # Download KDATA-VPS data
 download_kdata_data () {
 #rm -rf menu.zip
-#wget --no-check-certificate -q https://hostingaz.vn/scripts/kdata/menu.zip
+#wget --no-check-certificate -q https://kdata.vn/scripts/kdata/menu.zip
 #unzip -q menu.zip
 #rm -rf menu.zip
 mkdir -p /etc/kdata/menu ; chmod 755 /etc/kdata/menu
@@ -1204,7 +1204,7 @@ Luu Y:
 + De bao mat, moi khi co dang nhap SSH va Server, KDATA-VPS se gui email thong bao toi dia chi email $kdataemail .
   Thay email hoac tat chuc nang nay bang [ BAT/TAT Email Thong Bao Login ] trong [ Tien ich - Addons ].  
   
-KDATA by Nguyen Oanh - http://hostingaz.vn' | exim  $kdataemail
+KDATA by Khanh Duy - https://kdata.vn' | exim  $kdataemail
 END
 chmod +x /tmp/finishedemail.sh
 /tmp/finishedemail.sh

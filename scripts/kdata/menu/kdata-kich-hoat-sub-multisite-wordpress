@@ -93,7 +93,7 @@ echo "TAO VHOST CHO SUBDOMAIN"
 echo "========================================================================="
 echo "Nhap sub ban da tao trong $website wp-admin. Chi nhap ten SUB ! "
 echo "-------------------------------------------------------------------------"
-echo "Vi du: Ten sub ban tao la kdata.hostingaz.vn, Nhap: kdata"
+echo "Vi du: Ten sub ban tao la kdata.kdata.vn, Nhap: kdata"
 echo "========================================================================="
 echo -n "Nhap ten sub: " 
 read subdomain

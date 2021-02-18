@@ -1,6 +1,6 @@
 #!/bin/bash
 . /home/kdata.conf
-rm -rf /tmp/*hostingaz*
+rm -rf /tmp/*kdata*
 code=`date |md5sum |cut -c '1-19'`
 echo "$(mysql --user=root --password=$mariadbpass -e "SHOW DATABASES;" | grep -Ev "(Database|information_schema|mysql|performance_schema)")" > /tmp/listdabasehostingaz
 checksize=$(du -sb /tmp/listdabasehostingaz | awk 'NR==1 {print $1}')
@@ -24,7 +24,7 @@ fi
  done
 
 if [ ! -f /tmp/checkdatabase-list ]; then
-rm -rf /tmp/*hostingaz*
+rm -rf /tmp/*kdata*
 rm -rf /tmp/*list*
 clear
 echo "========================================================================="
@@ -189,12 +189,12 @@ echo "List Backup Files:"
 echo "-------------------------------------------------------------------------"
 echo "http://$serverip:$priport/Listbackupall-DB-$code.txt"
 fi
-rm -rf /tmp/*hostingaz*
+rm -rf /tmp/*kdata*
 /etc/kdata/menu/kdata-them-xoa-database
    ;;
     *)
     clear
-    rm -rf /tmp/*hostingaz*
+    rm -rf /tmp/*kdata*
         echo "========================================================================= "
         echo "Huy bo lan luot sao luu tat ca database"
         /etc/kdata/menu/kdata-them-xoa-database

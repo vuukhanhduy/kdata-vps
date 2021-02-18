@@ -1,6 +1,6 @@
 #!/bin/bash
 . /home/kdata.conf
-rm -rf /tmp/*hostingaz*
+rm -rf /tmp/*kdata*
 mkdir -p /tmp/sitedangbatpagespeedhostingaz
 ls /etc/nginx/conf.d > /tmp/kdata-websitelist
 sed -i 's/\.conf//g' /tmp/kdata-websitelist 
@@ -26,7 +26,7 @@ echo "Website dang Bat Nginx Pagespeed: $(ls -1 /tmp/sitedangbatpagespeedhosting
 echo "-------------------------------------------------------------------------"
 ls /tmp/sitedangbatpagespeedhostingaz | pr -3 -t
 fi
-rm -rf /tmp/*hostingaz*
+rm -rf /tmp/*kdata*
 rm -rf /tmp/*kdata*
 /etc/kdata/menu/pagespeed/kdata-pagespeed-menu
 

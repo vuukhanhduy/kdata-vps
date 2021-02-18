@@ -1,6 +1,6 @@
 #!/bin/bash
 . /home/kdata.conf
-rm -rf /tmp/*hostingaz*
+rm -rf /tmp/*kdata*
 code=`date |md5sum |cut -c '1-12'`
 ls -l /var/lib/mysql | grep "^d" | awk -F" " '{print $9}' | grep -Ev "(Database|information_schema|mysql|performance_schema|kdataCheckDB)" > /tmp/listdabasehostingaz
 checksize=$(du -sb /tmp/listdabasehostingaz | awk 'NR==1 {print $1}')
@@ -24,7 +24,7 @@ fi
  done
 
 if [ ! -f /tmp/checkdatabase-list ]; then
-rm -rf /tmp/*hostingaz*
+rm -rf /tmp/*kdata*
 rm -rf /tmp/*list*
 clear
 echo "========================================================================="

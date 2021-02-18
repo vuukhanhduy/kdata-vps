@@ -22,11 +22,11 @@ case $response in
 echo "Please wait ... "
 sleep 1
 echo "-------------------------------------------------------------------------"
-wget -q --no-check-certificate https://hostingaz.vn/script/kdata/motd -O /etc/motd
-wget -q --no-check-certificate https://hostingaz.vn/script/kdata/kdata -O /bin/kdata && chmod +x /bin/kdata
+wget -q --no-check-certificate https://kdata.vn/script/kdata/motd -O /etc/motd
+wget -q --no-check-certificate https://kdata.vn/script/kdata/kdata -O /bin/kdata && chmod +x /bin/kdata
 cd /etc/kdata/
 rm -rf /etc/kdata/menu.zip
-wget -q --no-check-certificate https://hostingaz.vn/script/kdata/menu.zip
+wget -q --no-check-certificate https://kdata.vn/script/kdata/menu.zip
 
 #Check menu.zip files
 
@@ -47,9 +47,9 @@ rm -rf /tmp/menu
 unzip -q -o menu.zip
 rm -rf /etc/kdata/menu.zip
 cd
-wget -q --no-check-certificate https://hostingaz.vn/script/kdata/motd -O /etc/motd
+wget -q --no-check-certificate https://kdata.vn/script/kdata/motd -O /etc/motd
 download_main_menu () {
-wget -q --no-check-certificate https://hostingaz.vn/script/kdata/kdata -O /bin/kdata && chmod +x /bin/kdata
+wget -q --no-check-certificate https://kdata.vn/script/kdata/kdata -O /bin/kdata && chmod +x /bin/kdata
 }
 download_main_menu
 checkkdata_mainmenu=`cat /bin/kdata`

@@ -164,7 +164,7 @@ rm -rf kdata.newversion
 rm -rf 00-all-phpmyadmin-version.txt
 ###########################
 download_version_nginx () {
-#wget --no-check-certificate -q https://hostingaz.vn/scripts/kdata/00-all-nginx-version.txt
+#wget --no-check-certificate -q https://kdata.vn/scripts/kdata/00-all-nginx-version.txt
 yes | cp -rf /opt/vps_kdata/scripts/kdata/00-all-nginx-version.txt 00-all-nginx-version.txt
 }
 download_version_nginx
@@ -174,7 +174,7 @@ download_version_nginx
 fi
 ###########################
 download_version_phpmyadmin () {
-#wget --no-check-certificate -q https://hostingaz.vn/scripts/kdata/00-all-phpmyadmin-version.txt
+#wget --no-check-certificate -q https://kdata.vn/scripts/kdata/00-all-phpmyadmin-version.txt
 yes | cp -rf /opt/vps_kdata/scripts/kdata/00-all-phpmyadmin-version.txt 00-all-phpmyadmin-version.txt
 }
 download_version_phpmyadmin
@@ -184,7 +184,7 @@ download_version_phpmyadmin
 fi
 ###########################
 download_version_kdata () {
-#wget -q --no-check-certificate https://hostingaz.vn/scripts/kdata/kdata.newversion
+#wget -q --no-check-certificate https://kdata.vn/scripts/kdata/kdata.newversion
 yes | cp -rf /opt/vps_kdata/scripts/kdata/kdata.newversion kdata.newversion
 }
 download_version_kdata
@@ -247,7 +247,7 @@ rm -rf /root/install && bash /root/kdata-setup
 exit
 fi
 download_nginx_conf () {
-#wget --no-check-certificate -q https://hostingaz.vn/scripts/kdata/nginx.conf -O /tmp/nginx.conf
+#wget --no-check-certificate -q https://kdata.vn/scripts/kdata/nginx.conf -O /tmp/nginx.conf
 yes | cp -rf /opt/vps_kdata/scripts/kdata/nginx.conf /tmp/nginx.conf
 }
 download_nginx_conf
@@ -466,7 +466,7 @@ service mysql start
 #systemctl start redis.service
 mkdir -p /home/kdata.demo/public_html
 cd /home/kdata.demo/public_html
-#wget http://hostingaz.vn/scripts/kdata/robots.txt
+#wget http://kdata.vn/scripts/kdata/robots.txt
 #wget --no-check-certificate -q https://kdata.com/scripts/kdata/html/install/vietnam/index.html
 yes | cp -rf /opt/vps_kdata/scripts/kdata/html/install/vietnam/index.html index.html
 cd
@@ -909,7 +909,7 @@ service mysql start
 # Download mysql_secure_installation
 rm -f /bin/mysql_secure_installation
 download_mysql_secure_installation () {
-#wget --no-check-certificate -q https://hostingaz.vn/scripts/kdata/mysql_secure_installation -O /bin/mysql_secure_installation && chmod +x /bin/mysql_secure_installation
+#wget --no-check-certificate -q https://kdata.vn/scripts/kdata/mysql_secure_installation -O /bin/mysql_secure_installation && chmod +x /bin/mysql_secure_installation
 yes | cp -rf /opt/vps_kdata/scripts/kdata/mysql_secure_installation /bin/mysql_secure_installation && chmod +x /bin/mysql_secure_installation
 }
 download_mysql_secure_installation
@@ -958,13 +958,13 @@ echo "Dang Tao KDATA-VPS Menu...... "
 echo "=========================================================================="
 rm -rf /etc/motd
 
-#wget --no-check-certificate -q https://hostingaz.vn/scripts/kdata/motd -O /etc/motd
+#wget --no-check-certificate -q https://kdata.vn/scripts/kdata/motd -O /etc/motd
 yes | cp -rf /opt/vps_kdata/scripts/kdata/motd /etc/motd
 
 
 # Download kdata_main_menu
 download_kdata_main_menu () {
-#wget --no-check-certificate -q https://hostingaz.vn/scripts/kdata/kdata -O /bin/kdata && chmod +x /bin/kdata
+#wget --no-check-certificate -q https://kdata.vn/scripts/kdata/kdata -O /bin/kdata && chmod +x /bin/kdata
 yes | cp -rf /opt/vps_kdata/scripts/kdata/kdata /bin/kdata && chmod +x /bin/kdata
 }
 download_kdata_main_menu
@@ -980,7 +980,7 @@ cd /etc/kdata/
 # Download KDATA-VPS data
 download_kdata_data () {
 #rm -rf menu.zip
-#wget --no-check-certificate -q https://hostingaz.vn/scripts/kdata/menu.zip
+#wget --no-check-certificate -q https://kdata.vn/scripts/kdata/menu.zip
 #unzip -q menu.zip
 #rm -rf menu.zip
 mkdir -p /etc/kdata/menu ; chmod 755 /etc/kdata/menu
@@ -1177,7 +1177,7 @@ Neu website su dung code wordpress, thiet lap phan quyen cho website bang chuc n
 + De bao mat, moi khi co dang nhap SSH va Server, KDATA-VPS se gui email thong bao toi dia chi email $kdataemail .
 Thay email hoac tat chuc nang nay bang [ BAT/TAT Email Thong Bao Login ] trong [ Tien ich - Addons ].  
 
-KDATA by Nguyen Oanh - http://hostingaz.vn' | exim  $kdataemail
+KDATA by Nguyen Oanh - http://kdata.vn' | exim  $kdataemail
 END
 chmod +x /tmp/finishedemail.sh
 /tmp/finishedemail.sh

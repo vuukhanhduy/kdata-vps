@@ -3,7 +3,7 @@
 echo "-------------------------------------------------------------------------"
 echo "Please wait ..."
 sleep 1
-rm -rf /tmp/*hostingaz*
+rm -rf /tmp/*kdata*
 mkdir -p /tmp/sitedangdenyrunscripthostingaz
 ls /etc/nginx/conf.d > /tmp/kdata-websitelist
 sed -i 's/\.conf//g' /tmp/kdata-websitelist 
@@ -32,6 +32,6 @@ else
 echo "Website KHONG CHO PHEP chay script trong writeable folder: $(ls -1 /tmp/sitedangdenyrunscripthostingaz | wc -l)"
 echo "-------------------------------------------------------------------------"
 ls /tmp/sitedangdenyrunscripthostingaz | pr -3 -t
-rm -rf /tmp/*hostingaz*
+rm -rf /tmp/*kdata*
 fi
 /etc/kdata/menu/kdata-tien-ich

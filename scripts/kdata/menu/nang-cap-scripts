@@ -14,7 +14,7 @@ fi
 maximumsize=10
 rm -rf /etc/kdata/kdata.newversion
 cd /etc/kdata
-#timeout 3 wget -q http://hostingaz.vn/script/kdata/kdata.newversion
+#timeout 3 wget -q http://kdata.vn/script/kdata/kdata.newversion
 timeout 3 wget --no-check-certificate -q https://raw.githubusercontent.com/vuukhanhduy/kdata-vps/main/version -O /etc/kdata/kdata.newversion
 
 cd
@@ -84,7 +84,7 @@ echo "Chuan bi update KDATA-VPS..... "
 sleep 1
 
 rm -rf /etc/kdata/kdata-update
-#wget -q http://hostingaz.vn/script/kdata/kdata-update -O /etc/kdata/kdata-update && chmod +x /etc/kdata/kdata-update
+#wget -q http://kdata.vn/script/kdata/kdata-update -O /etc/kdata/kdata-update && chmod +x /etc/kdata/kdata-update
 wget --no-check-certificate -q https://raw.githubusercontent.com/vuukhanhduy/kdata-vps/main/scripts/kdata/kdata-update -O /etc/kdata/kdata-update
 chmod +x /etc/kdata/kdata-update
 bash /etc/kdata/kdata-update

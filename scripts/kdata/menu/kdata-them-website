@@ -74,7 +74,7 @@ cat > "/home/$website/public_html/index.html" <<END
 		</style>
 	</head>
 	<body>
-		<h1><strong>Them $website vao server bang <a href="https://hostingaz.vn/3455-cai-dat-nginx-mariadb-php-fpm-lemp-toi-uu-bao-mat-vps-centos-kdata.html" title="Cai dat KDATA, huong dan cai dat KDATA tren VPS server" > KDATA</a> thanh cong !</strong></h1>
+		<h1><strong>Them $website vao server bang <a href="https://kdata.vn/3455-cai-dat-nginx-mariadb-php-fpm-lemp-toi-uu-bao-mat-vps-centos-kdata.html" title="Cai dat KDATA, huong dan cai dat KDATA tren VPS server" > KDATA</a> thanh cong !</strong></h1>
 			</body>
 </html>
 END

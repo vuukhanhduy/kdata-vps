@@ -1,6 +1,6 @@
 #!/bin/sh
 . /home/kdata.conf
-rm -rf /tmp/*hostingaz*
+rm -rf /tmp/*kdata*
 mkdir -p /tmp/saoluuwebsitethanhconghostingaz
 mkdir -p /tmp/saoluuwebsitethatbaihostingaz
 ls /etc/nginx/conf.d > /tmp/kdata-websitelist
@@ -24,7 +24,7 @@ fi
 
 if [ ! -f /tmp/checksite-list ]; then
 rm -rf /tmp/*kdata*
-rm -rf /tmp/*hostingaz*
+rm -rf /tmp/*kdata*
 clear
 echo "========================================================================="
 echo "Khong tim thay website co du lieu tren server"

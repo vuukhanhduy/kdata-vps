@@ -2,7 +2,7 @@
 . /home/kdata.conf
 rm -rf /tmp/kdata.newversion*
 cd /tmp
-timeout 3 wget -q https://hostingaz.vn/script/kdata/kdata.newversion
+timeout 3 wget -q https://kdata.vn/script/kdata/kdata.newversion
 cd
 LOCALVER=`cat /etc/kdata/kdata.version`
  if [ ! -f /tmp/kdata.newversion ]; then 

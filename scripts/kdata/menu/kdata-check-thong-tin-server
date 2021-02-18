@@ -20,7 +20,7 @@ select opt in "${options[@]}" "Thoat"; do
     8) /etc/kdata/menu/checkddos/kdata-user-dang-nhap-gan-day;;
     9) echo "-------------------------------------------------------------------------" && cat /proc/cpuinfo && echo "-------------------------------------------------------------------------";;
     10) echo "-------------------------------------------------------------------------" && dd if=/dev/zero of=test bs=64k count=16k conv=fdatasync; rm test && echo "-------------------------------------------------------------------------";;
-#    11) clear && wget http://hostingaz.vn/script/others/freeVPSbench.sh -O - -o /dev/null|bash;;
+#    11) clear && wget http://kdata.vn/script/others/freeVPSbench.sh -O - -o /dev/null|bash;;
     11) clear && wget --no-check-certificate https://raw.githubusercontent.com/vuukhanhduy/kdata-vps/main/scripts/others/freeVPSbench.sh -O - -o /dev/null|bash;;
     0) clear && kdata;;
 $(( ${#options[@]}+1 )) ) echo "Bye!";  clear && /bin/kdata;;

@@ -1,6 +1,6 @@
 #!/bin/bash
 . /home/kdata.conf
-rm -rf /tmp/*hostingaz*
+rm -rf /tmp/*kdata*
 mkdir -p /tmp/danhsachdatabasebackuphostingaz
 listdatabases=$(ls -l /var/lib/mysql | grep "^d" | awk -F" " '{print $9}' | grep -Ev "(Database|information_schema|mysql|performance_schema|kdataCheckDB)")
 code=`date |md5sum |cut -c '1-12'`
@@ -94,7 +94,7 @@ echo "http://$serverip:$priport/Listbackupall-DB-$code.txt"
 echo "" >> /home/$mainsite/private_html/Listbackupall-DB-$code.txt
 echo "===================================================The End==============================================================" >> /home/$mainsite/private_html/Listbackupall-DB-$code.txt
 /etc/kdata/menu/kdata-them-xoa-database
-rm -rf /tmp/*hostingaz*
+rm -rf /tmp/*kdata*
    ;;
     *)
     clear
