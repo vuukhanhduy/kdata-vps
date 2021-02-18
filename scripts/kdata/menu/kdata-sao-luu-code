@@ -1,8 +1,8 @@
 #!/bin/bash
 . /home/kdata.conf
 rm -rf /tmp/*kdata*
-mkdir -p /tmp/saoluuwebsitethanhconghostingaz
-mkdir -p /tmp/saoluuwebsitethatbaihostingaz
+mkdir -p /tmp/saoluuwebsitethanhcongkdata
+mkdir -p /tmp/saoluuwebsitethatbaikdata
 ls /etc/nginx/conf.d > /tmp/kdata-websitelist
 sed -i 's/\.conf//g' /tmp/kdata-websitelist 
  cat > "/tmp/kdata-replace" <<END

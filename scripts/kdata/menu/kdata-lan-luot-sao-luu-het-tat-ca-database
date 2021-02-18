@@ -2,8 +2,8 @@
 . /home/kdata.conf
 rm -rf /tmp/*kdata*
 code=`date |md5sum |cut -c '1-19'`
-echo "$(mysql --user=root --password=$mariadbpass -e "SHOW DATABASES;" | grep -Ev "(Database|information_schema|mysql|performance_schema)")" > /tmp/listdabasehostingaz
-checksize=$(du -sb /tmp/listdabasehostingaz | awk 'NR==1 {print $1}')
+echo "$(mysql --user=root --password=$mariadbpass -e "SHOW DATABASES;" | grep -Ev "(Database|information_schema|mysql|performance_schema)")" > /tmp/listdabasekdata
+checksize=$(du -sb /tmp/listdabasekdata | awk 'NR==1 {print $1}')
    if [ "$checksize" == "0" ]; then
    clear
    echo "========================================================================="
@@ -11,10 +11,10 @@ checksize=$(du -sb /tmp/listdabasehostingaz | awk 'NR==1 {print $1}')
    /etc/kdata/menu/kdata-them-xoa-database
    exit
    fi
-sodatabasetrenserver=$(cat /tmp/listdabasehostingaz | wc -l)
-listdatabasetrenserver=$(cat /tmp/listdabasehostingaz)
-mkdir -p /tmp/saoluudatabasethanhconghostingaz
-mkdir -p /tmp/saoluudatabasethatbaihostingaz
+sodatabasetrenserver=$(cat /tmp/listdabasekdata | wc -l)
+listdatabasetrenserver=$(cat /tmp/listdabasekdata)
+mkdir -p /tmp/saoluudatabasethanhcongkdata
+mkdir -p /tmp/saoluudatabasethatbaikdata
 rm -rf /tmp/*check*
 for database in $listdatabasetrenserver 
 do
@@ -78,13 +78,13 @@ echo "==========================================================================
 echo "Database $dataname (Dang duoc BAT Auto Backup) :" >> /home/$mainsite/private_html/Listbackupall-DB-$code.txt 
 echo "------------------------------------------------------------------------------------------------------------------------" >> /home/$mainsite/private_html/Listbackupall-DB-$code.txt
 echo "http://$serverip:$priport/backup/$dataname/$filename" >> /home/$mainsite/private_html/Listbackupall-DB-$code.txt
-touch /tmp/saoluudatabasethanhconghostingaz/$dataname
+touch /tmp/saoluudatabasethanhcongkdata/$dataname
 else
 echo "=========================================================================" 
 echo "Sao luu Database $dataname that bai !"
 echo "========================================================================================================================" >> /home/$mainsite/private_html/Listbackupall-DB-$code.txt
 echo "Sao luu Database $dataname that bai !" >> /home/$mainsite/private_html/Listbackupall-DB-$code.txt
-touch /tmp/saoluudatabasethatbaihostingaz/$dataname
+touch /tmp/saoluudatabasethatbaikdata/$dataname
 fi
 fi
 fi
@@ -127,13 +127,13 @@ echo "==========================================================================
 echo "Database $dataname :" >> /home/$mainsite/private_html/Listbackupall-DB-$code.txt 
 echo "------------------------------------------------------------------------------------------------------------------------" >> /home/$mainsite/private_html/Listbackupall-DB-$code.txt
 echo "http://$serverip:$priport/backup/$dataname/$dataname$randomcode.sql.gz" >> /home/$mainsite/private_html/Listbackupall-DB-$code.txt
-touch /tmp/saoluudatabasethanhconghostingaz/$dataname
+touch /tmp/saoluudatabasethanhcongkdata/$dataname
 else
 echo "=========================================================================" 
 echo "Sao luu Database $dataname that bai !"
 echo "========================================================================================================================" >> /home/$mainsite/private_html/Listbackupall-DB-$code.txt
 echo "Sao luu Database $dataname that bai !" >> /home/$mainsite/private_html/Listbackupall-DB-$code.txt
-touch /tmp/saoluudatabasethatbaihostingaz/$dataname
+touch /tmp/saoluudatabasethatbaikdata/$dataname
 fi
 fi
 }
@@ -174,16 +174,16 @@ clear
 echo "========================================================================="
 echo "Co $sodatabase Database co du lieu tren server"
 echo "-------------------------------------------------------------------------"
-if [ "$(ls -1 /tmp/saoluudatabasethanhconghostingaz | wc -l)" == "$sodatabase" ]; then
+if [ "$(ls -1 /tmp/saoluudatabasethanhcongkdata | wc -l)" == "$sodatabase" ]; then
 echo "Backup tat ca database thanh cong"
 else
-echo "Backup that bai $(ls -1 /tmp/saoluudatabasethatbaihostingaz | wc -l) database"
+echo "Backup that bai $(ls -1 /tmp/saoluudatabasethatbaikdata | wc -l) database"
 echo "-------------------------------------------------------------------------"
 echo "Database sao luu that bai:"
 echo "-------------------------------------------------------------------------"
-ls /tmp/saoluudatabasethatbaihostingaz
+ls /tmp/saoluudatabasethatbaikdata
 fi
-if [ ! "$(ls -1 /tmp/saoluudatabasethatbaihostingaz | wc -l)" == "$sodatabase" ]; then
+if [ ! "$(ls -1 /tmp/saoluudatabasethatbaikdata | wc -l)" == "$sodatabase" ]; then
 echo "-------------------------------------------------------------------------"
 echo "List Backup Files:"
 echo "-------------------------------------------------------------------------"

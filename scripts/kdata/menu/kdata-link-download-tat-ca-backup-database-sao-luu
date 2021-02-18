@@ -1,7 +1,7 @@
 #!/bin/bash
 . /home/kdata.conf
 rm -rf /tmp/*kdata*
-mkdir -p /tmp/danhsachdatabasebackuphostingaz
+mkdir -p /tmp/danhsachdatabasebackupkdata
 listdatabases=$(ls -l /var/lib/mysql | grep "^d" | awk -F" " '{print $9}' | grep -Ev "(Database|information_schema|mysql|performance_schema|kdataCheckDB)")
 code=`date |md5sum |cut -c '1-12'`
 rm -rf /tmp/checksite-list
@@ -45,7 +45,7 @@ echo "--------------------------------------------------------------------------
 echo "$showinfo"  >> /home/$mainsite/private_html/Listbackupall-DB-$code.txt
 echo "------------------------------------------------------------------------------------------------------------------------" >> /home/$mainsite/private_html/Listbackupall-DB-$code.txt
 echo "http://$serverip:$priport/backup/$dataname/$filename" >> /home/$mainsite/private_html/Listbackupall-DB-$code.txt
-touch /tmp/danhsachdatabasebackuphostingaz/$dataname
+touch /tmp/danhsachdatabasebackupkdata/$dataname
 #####################
 
 if [ "$(cat /tmp/linkbackupall | wc -l)" -gt 1 ]; then
@@ -86,7 +86,7 @@ clear
 echo "========================================================================="
 echo "Database co backup:"
 echo "-------------------------------------------------------------------------"
-ls /tmp/danhsachdatabasebackuphostingaz | pr -2 -t
+ls /tmp/danhsachdatabasebackupkdata | pr -2 -t
 echo "-------------------------------------------------------------------------"
 echo "Link download tat ca backup:"
 echo "-------------------------------------------------------------------------"

@@ -4,8 +4,8 @@ if [ ! -f /etc/cron.d/kdata.code.cron ]; then
 touch /etc/cron.d/kdata.code.cron
 fi
 rm -rf /tmp/*kdata*
-mkdir -p /tmp/saoluuwebsitethanhconghostingaz
-mkdir -p /tmp/saoluuwebsitethatbaihostingaz
+mkdir -p /tmp/saoluuwebsitethanhcongkdata
+mkdir -p /tmp/saoluuwebsitethatbaikdata
 ls /etc/nginx/conf.d > /tmp/kdata-websitelist
 sed -i 's/\.conf//g' /tmp/kdata-websitelist 
  cat > "/tmp/kdata-replace" <<END
@@ -32,9 +32,9 @@ echo "Khong tim thay website co du lieu tren server"
 fi
 sowebsitecodulieu=$(cat /tmp/checksite-list | wc -l)
 randomcode=-`date |md5sum |cut -c '1-15'`
-ls /bin/ > /tmp/checkautobackuphostingaz.txt
+ls /bin/ > /tmp/checkautobackupkdata.txt
 saoluucode () { 
-if [ ! "$(grep kdata-backupcode-$website /tmp/checkautobackuphostingaz.txt)" == "" ]; then
+if [ ! "$(grep kdata-backupcode-$website /tmp/checkautobackupkdata.txt)" == "" ]; then
 	if [ ! "$(grep kdata-backupcode-$website /etc/cron.d/kdata.code.cron)" == "" ]; then
 pathname=$(grep "\/home\/$mainsite\/private_html\/backup\/$website" /bin/kdata-backupcode-$website | awk 'NR==6 {print $3}')
 filename=$(basename $pathname)
@@ -81,13 +81,13 @@ echo "==========================================================================
 echo "Website $website $thongbao:" >> /home/$mainsite/private_html/listbackup-AW$randomcode.txt 
 echo "------------------------------------------------------------------------------------------------------------------------" >> /home/$mainsite/private_html/listbackup-AW$randomcode.txt
 echo "http://$serverip:$priport/backup/$website/$filename" >> /home/$mainsite/private_html/listbackup-AW$randomcode.txt
-touch /tmp/saoluuwebsitethanhconghostingaz/$website
+touch /tmp/saoluuwebsitethanhcongkdata/$website
 else
 echo "=========================================================================" 
 echo "Backup website $website that bai !"
 echo "========================================================================================================================" >> /home/$mainsite/private_html/listbackup-AW$randomcode.txt
 echo "Backup website $website that bai !" >> /home/$mainsite/private_html/listbackup-AW$randomcode.txt
-touch /tmp/saoluuwebsitethatbaihostingaz/$website
+touch /tmp/saoluuwebsitethatbaikdata/$website
 fi
 }
 
@@ -122,18 +122,18 @@ echo "========================================================================="
 echo "Co $sowebsitetrenserver website tren server"
 echo "-------------------------------------------------------------------------"
 echo "Website co du lieu: $sowebsitecodulieu"
-	if [ "$(ls -1 /tmp/saoluuwebsitethanhconghostingaz | wc -l)" == "$sowebsitecodulieu" ]; then
+	if [ "$(ls -1 /tmp/saoluuwebsitethanhcongkdata | wc -l)" == "$sowebsitecodulieu" ]; then
 	echo "-------------------------------------------------------------------------"
 	echo "Backup $sowebsitecodulieu website thanh cong"
 	else
 	echo "-------------------------------------------------------------------------"
-	echo "Backup that bai $(ls -1 /tmp/saoluuwebsitethatbaihostingaz | wc -l) website"
+	echo "Backup that bai $(ls -1 /tmp/saoluuwebsitethatbaikdata | wc -l) website"
 	echo "-------------------------------------------------------------------------"
 	echo "Website sao luu that bai:"
 	echo "-------------------------------------------------------------------------"
-	ls /tmp/saoluuwebsitethatbaihostingaz
+	ls /tmp/saoluuwebsitethatbaikdata
 	fi
-if [ ! "$(ls -1 /tmp/saoluuwebsitethatbaihostingaz | wc -l)" == "$sowebsitecodulieu" ]; then
+if [ ! "$(ls -1 /tmp/saoluuwebsitethatbaikdata | wc -l)" == "$sowebsitecodulieu" ]; then
 echo "-------------------------------------------------------------------------"
 echo "List Backup Files:"
 echo "-------------------------------------------------------------------------"

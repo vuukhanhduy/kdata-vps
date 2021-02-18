@@ -1,7 +1,7 @@
 #!/bin/bash
 . /home/kdata.conf
 rm -rf /tmp/*kdata*
-mkdir -p /tmp/danhsachwebsitebackuphostingaz
+mkdir -p /tmp/danhsachwebsitebackupkdata
 ls /etc/nginx/conf.d > /tmp/kdata-websitelist
 sed -i 's/\.conf//g' /tmp/kdata-websitelist
  cat > "/tmp/kdata-replace" <<END
@@ -65,7 +65,7 @@ fi
 #########################
 rm -rf /tmp/linkbackupall
 rm -rf /tmp/linkbackup
-touch /tmp/danhsachwebsitebackuphostingaz/$website
+touch /tmp/danhsachwebsitebackupkdata/$website
 }
 
 echo "========================================================================="
@@ -89,7 +89,7 @@ clear
 echo "========================================================================="
 echo "Danh Sach Cac Website Co Backup:"
 echo "-------------------------------------------------------------------------"
-ls /tmp/danhsachwebsitebackuphostingaz | pr -2 -t
+ls /tmp/danhsachwebsitebackupkdata | pr -2 -t
 echo "-------------------------------------------------------------------------"
 echo "Link download Tat Ca Cac File Backup:"
 echo "-------------------------------------------------------------------------"

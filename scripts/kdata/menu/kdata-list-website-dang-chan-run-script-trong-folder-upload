@@ -4,7 +4,7 @@ echo "-------------------------------------------------------------------------"
 echo "Please wait ..."
 sleep 1
 rm -rf /tmp/*kdata*
-mkdir -p /tmp/sitedangdenyrunscripthostingaz
+mkdir -p /tmp/sitedangdenyrunscriptkdata
 ls /etc/nginx/conf.d > /tmp/kdata-websitelist
 sed -i 's/\.conf//g' /tmp/kdata-websitelist 
 sowebsitetrenserver=$(cat /tmp/kdata-websitelist | wc -l)
@@ -13,12 +13,12 @@ for website in $sowebsite
 do
 if [ -f /etc/nginx/conf.d/$website.conf ]; then
 if [ "$(grep deny-script-writeable-folder.conf /etc/nginx/conf.d/$website.conf)" == "include /etc/nginx/conf/deny-script-writeable-folder.conf;" ]; then
-touch /tmp/sitedangdenyrunscripthostingaz/$website
+touch /tmp/sitedangdenyrunscriptkdata/$website
 fi
 fi
 if [ -f /etc/nginx/conf.d/www.$website.conf ]; then
 if [ "$(grep deny-script-writeable-folder.conf /etc/nginx/conf.d/www.$website.conf)" == "include /etc/nginx/conf/deny-script-writeable-folder.conf;" ]; then
-touch /tmp/sitedangdenyrunscripthostingaz/www.$website
+touch /tmp/sitedangdenyrunscriptkdata/www.$website
 fi
 fi
 done
@@ -26,12 +26,12 @@ clear
 echo "========================================================================="
 echo "Website tren server: $sowebsitetrenserver"
 echo "-------------------------------------------------------------------------"
-if [ "$(ls -1 /tmp/sitedangdenyrunscripthostingaz | wc -l)" == "0" ]; then
+if [ "$(ls -1 /tmp/sitedangdenyrunscriptkdata | wc -l)" == "0" ]; then
 echo "Website KHONG CHO PHEP chay script trong writeable folder: 0"
 else
-echo "Website KHONG CHO PHEP chay script trong writeable folder: $(ls -1 /tmp/sitedangdenyrunscripthostingaz | wc -l)"
+echo "Website KHONG CHO PHEP chay script trong writeable folder: $(ls -1 /tmp/sitedangdenyrunscriptkdata | wc -l)"
 echo "-------------------------------------------------------------------------"
-ls /tmp/sitedangdenyrunscripthostingaz | pr -3 -t
+ls /tmp/sitedangdenyrunscriptkdata | pr -3 -t
 rm -rf /tmp/*kdata*
 fi
 /etc/kdata/menu/kdata-tien-ich

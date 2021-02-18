@@ -2,8 +2,8 @@
 . /home/kdata.conf
 rm -rf /tmp/*kdata*
 code=`date |md5sum |cut -c '1-12'`
-ls -l /var/lib/mysql | grep "^d" | awk -F" " '{print $9}' | grep -Ev "(Database|information_schema|mysql|performance_schema|kdataCheckDB)" > /tmp/listdabasehostingaz
-checksize=$(du -sb /tmp/listdabasehostingaz | awk 'NR==1 {print $1}')
+ls -l /var/lib/mysql | grep "^d" | awk -F" " '{print $9}' | grep -Ev "(Database|information_schema|mysql|performance_schema|kdataCheckDB)" > /tmp/listdabasekdata
+checksize=$(du -sb /tmp/listdabasekdata | awk 'NR==1 {print $1}')
    if [ "$checksize" == "0" ]; then
    clear
    echo "========================================================================="
@@ -11,10 +11,10 @@ checksize=$(du -sb /tmp/listdabasehostingaz | awk 'NR==1 {print $1}')
    /etc/kdata/menu/kdata-them-xoa-database
    exit
    fi
-sodatabasetrenserver=$(cat /tmp/listdabasehostingaz | wc -l)
-listdatabasetrenserver=$(cat /tmp/listdabasehostingaz)
-mkdir -p /tmp/saoluudatabasethanhconghostingaz
-mkdir -p /tmp/saoluudatabasethatbaihostingaz
+sodatabasetrenserver=$(cat /tmp/listdabasekdata | wc -l)
+listdatabasetrenserver=$(cat /tmp/listdabasekdata)
+mkdir -p /tmp/saoluudatabasethanhcongkdata
+mkdir -p /tmp/saoluudatabasethatbaikdata
 rm -rf /tmp/*check*
 for database in $listdatabasetrenserver 
 do
