@@ -475,13 +475,13 @@ mkdir -p /var/log/nginx
 chown -R nginx:nginx /var/log/nginx
 chown -R nginx:nginx /var/lib/php/session
 rm -rf /etc/sysconfig/memcached
-# cat > "/etc/sysconfig/memcached" <<END
-# PORT="11211"
-# USER="memcached"
-# MAXCONN="10024"
-# CACHESIZE="20"
-# OPTIONS=""
-# END
+cat > "/etc/sysconfig/memcached" <<END
+PORT="11211"
+USER="memcached"
+MAXCONN="10024"
+CACHESIZE="20"
+OPTIONS=""
+END
 
 kdata_setup_cleanup_config_file () {
 # remove blank in last line
@@ -1128,6 +1128,7 @@ sleep 3
 #systemctl enable memcached.service 
 rm -rf /root/install*
 rm -rf /root/kdata-setup
+rm -rf /etc/sysconfig/memcached
 cat >> "/home/KDATA-manage-info.txt" <<END
 =========================================================================
                            VPS MANAGE INFOMATION                         
