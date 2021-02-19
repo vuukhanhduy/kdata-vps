@@ -390,6 +390,10 @@ fi
 
 #sudo yum -y install memcached
 
+# Install and Remove memcached
+yum -y install memcached
+yum -y remove memcache*
+
 sudo yum -y install ImageMagick ImageMagick-devel ImageMagick-c++ ImageMagick-c++-devel
 yes "" | pecl install imagick
 # neu cai dat thanh cong imagick -> include vao
