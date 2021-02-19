@@ -1087,6 +1087,7 @@ sleep 3
 #service memcached start
 rm -rf /root/install*
 rm -rf /root/kdata-setup
+rm -rf /etc/sysconfig/memcached
 cat >> "/home/KDATA-manage-info.txt" <<END
 =========================================================================
                            VPS MANAGE INFOMATION                        
