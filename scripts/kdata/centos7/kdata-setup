@@ -415,10 +415,6 @@ echo "Install php module..."
 sudo yum -y install php php-curl php-pecl-zip php-zip php-soap php-cli php-snmp php-pspell php-gmp php-ldap php-bcmath php-intl php-imap perl-libwww-perl perl-LWP-Protocol-https php-pear-Net-SMTP php-enchant php-common php-fpm php-gd php-devel php-mysql php-pear php-opcache php-pdo php-zlib php-xml php-mbstring php-mcrypt php-xmlrpc php-tidy
 fi
 
-# Install and Remove memcached
-yum -y install memcached
-yum -y remove memcache*
-
 sudo yum -y install ImageMagick ImageMagick-devel ImageMagick-c++ ImageMagick-c++-devel 
 yes "" | pecl install imagick
 # neu cai dat thanh cong imagick -> include vao
@@ -479,13 +475,13 @@ mkdir -p /var/log/nginx
 chown -R nginx:nginx /var/log/nginx
 chown -R nginx:nginx /var/lib/php/session
 rm -rf /etc/sysconfig/memcached
-cat > "/etc/sysconfig/memcached" <<END
-PORT="11211"
-USER="memcached"
-MAXCONN="10024"
-CACHESIZE="20"
-OPTIONS=""
-END
+# cat > "/etc/sysconfig/memcached" <<END
+# PORT="11211"
+# USER="memcached"
+# MAXCONN="10024"
+# CACHESIZE="20"
+# OPTIONS=""
+# END
 
 kdata_setup_cleanup_config_file () {
 # remove blank in last line
