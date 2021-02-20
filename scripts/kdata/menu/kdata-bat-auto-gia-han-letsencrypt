@@ -7,7 +7,7 @@ clear
 echo "========================================================================="
 echo "Chuc nang tu dong gia han chung chi SSL Let's Encrypt da duoc BAT."
 echo "-------------------------------------------------------------------------"
-echo "KDATA se auto renew SSL 10 ngay truoc khi SSL het han."
+echo "KDATA se auto renew SSL vao luc 00:00 ngay 1 hang thang."
 /etc/kdata/menu/kdata-letsencrypt-menu
 fi
 echo "========================================================================="
@@ -27,13 +27,13 @@ cat > "/etc/kdata/Renew.SSL.Letencrypt" <<END
 END
 chmod +x /etc/kdata/Renew.SSL.Letencrypt
 echo "SHELL=/bin/sh" > /etc/cron.d/kdata.autorenew.ssl.cron
-echo "0 23 * * * root /etc/kdata/Renew.SSL.Letencrypt >/dev/null 2>&1" >> /etc/cron.d/kdata.autorenew.ssl.cron
+echo "0 0 1 * * root /etc/kdata/Renew.SSL.Letencrypt >/dev/null 2>&1" >> /etc/cron.d/kdata.autorenew.ssl.cron
 service crond restart
 clear
 echo "========================================================================="
 echo "Hoan thanh cai dat tu dong gia han chung chi SSL Let's Encrypt."
 echo "-------------------------------------------------------------------------"
-echo "KDATA se auto renew SSL 10 ngay truoc khi SSL het han."
+echo "KDATA se auto renew SSL vao luc 00:00 ngay 1 hang thang."
 /etc/kdata/menu/kdata-letsencrypt-menu
 ;;
     *)
