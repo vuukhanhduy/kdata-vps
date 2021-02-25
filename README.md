@@ -1,9 +1,3 @@
-## Diễn Đàn Hỗ Trợ Và Xử Lý Bug: 
-### [https://www.facebook.com/groups/wordpresseb](https://www.facebook.com/groups/wordpresseb)
-
-KDATA-VPS là bản chỉnh sửa lại từ KDATA-3.8.1, đây là phiên bản cuối cùng của KDATA mà mình clone lại được trước khi KDATA tiến hành mã hóa và thương mại hóa.
-Cơ bản thì trong phiên bản KDATA-VPS mình chủ yếu cập nhật lại một số phiên bản phần mềm trong cài đặt mặc định lên bản mới và ổn định nhất cho phù hợp với thời điểm 2020 và hỗ trợ các hệ điều hành mưới hơn như CentOS 7 & 8 thay vì tập trung vào CentOS 6 như phiên bản gốc.
-
 ### Lệnh Cài Đặt KDATA-VPS Trên Centos 6 & 7 & 8:
 ```
 bash <( curl -k https://raw.githubusercontent.com/vuukhanhduy/kdata-vps/main/install )
@@ -101,17 +95,3 @@ Lâu không dùng 2 bản cũ kia, mà nọ có việc nên xem lại câu lện
 - Loại bỏ memcached trong quá trình cài đặt mặc định, cái này ai thấy cần thiết thì cài thêm là được. Giờ Server/ VPS thường thuê là hàng chạy ổ SSD cũng rất nhanh, nên mình dùng Cache trên ổ cứng cho nó kinh tế hơn nhiều mà tốc độ tải không chậm hơn so với RAM là bao nhiêu.
 - Loại bỏ CSF trong quá trình cài đặt mặc định, về cơ bản thì CSF khá tốn RAM, ai có VPS hoặc server RAM khỏe thì bấm cài thêm thủ công. Sau khi cài xong VPS các bạn nên đổi SSH port đi, điều này cũng tránh được khá nhiều phiền toái cho VPS mà lại nhẹ. Đổi SSH port bằng cách vào menu số 25) Tien ich - Addons -> 13) Thay Doi Port SSH Number.
 - Còn lại hầu hết các tính năng vẫn được giữ nguyên hoặc chưa có thời gian chỉnh sửa, bổ sung...
-
-----------------------------------------------
-
-### Giới thiệu!
-#### Về cơ bản thì KDATA-VPS được hình thành do thời gian gần đây KDATA rất ít cập nhật và sử dụng những phần mềm quan trọng nhưng lại rất cũ so với thời đại. Ngoài ra, trong quá trình cài đặt và sử dụng có lỗi thì tác giả cũng rất lâu mới sửa, việc liên hệ với tác giả cũng rất khó nên mình quyết định từ bỏ bản mới nhất của tác giả là 4.6 để quay lại với phiên bản cũ hơn, ít tính năng hơn nhưng hầu hết những cái cần thiết với mình đều đã có.
-#### Quan trọng nhất thì bản KDATA-3.8.1 này là bản chưa mã hóa nên mình có thể xem mã nguồn và chỉnh sửa được nó theo ý muốn, theo kiến thức mà mình đã có.
-### Cách cài đặt:
-#### Cũng được mình thay đổi bằng cách cài đặt từ https://github.com/itvn9online/vpssim-free thay vì download từ nhiều nguồn khác nhau như KDATA. Thêm nữa khi up code lên github thì cũng có cái nhìn trực quan hơn, mọi người sẽ dễ dàng tham khảo và góp ý các thay đổi hơn cho đúng chuẩn mã nguồn mở.
-
-### Liên hệ:
-#### Facebok: https://www.facebook.com/ech.bay/
-#### Email: itvn9online@yahoo.com
-#### Website: https://echbay.com/
-#### [Mã HTML cho tệp README.md](https://docs.github.com/en/github/writing-on-github/basic-writing-and-formatting-syntax)
